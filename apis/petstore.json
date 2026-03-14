@@ -1,0 +1,10 @@
+{
+  "name": "petstore",
+  "description": "Swagger Petstore — demo API for testing",
+  "categories": ["demo"],
+  "specUrl": "https://petstore3.swagger.io/api/v3/openapi.json",
+  "baseUrl": "https://petstore3.swagger.io/api/v3",
+  "authType": "none",
+  "authEnvVar": "",
+  "docs": "https://petstore3.swagger.io"
+}

@@ -1,0 +1,10 @@
+{
+  "name": "cloudflare",
+  "description": "Cloudflare API v4 — DNS, CDN, Workers, Pages",
+  "categories": ["infrastructure", "cdn", "dns", "serverless"],
+  "specUrl": "https://raw.githubusercontent.com/cloudflare/api-schemas/main/openapi.json",
+  "baseUrl": "https://api.cloudflare.com/client/v4",
+  "authType": "bearer",
+  "authEnvVar": "CLOUDFLARE_API_TOKEN",
+  "docs": "https://developers.cloudflare.com/api"
+}

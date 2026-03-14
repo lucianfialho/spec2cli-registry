@@ -1,0 +1,10 @@
+{
+  "name": "digitalocean",
+  "description": "DigitalOcean API v2 — Droplets, Kubernetes, Databases",
+  "categories": ["infrastructure", "cloud", "hosting"],
+  "specUrl": "https://api-engineering.nyc3.cdn.digitaloceanspaces.com/spec-ci/DigitalOcean-public.v2.yaml",
+  "baseUrl": "https://api.digitalocean.com/v2",
+  "authType": "bearer",
+  "authEnvVar": "DIGITALOCEAN_TOKEN",
+  "docs": "https://docs.digitalocean.com/reference/api"
+}

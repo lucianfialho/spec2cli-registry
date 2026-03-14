@@ -1,0 +1,10 @@
+{
+  "name": "openai",
+  "description": "OpenAI API — GPT, DALL-E, Whisper, Embeddings",
+  "categories": ["ai", "machine-learning", "nlp"],
+  "specUrl": "https://raw.githubusercontent.com/openai/openai-openapi/master/openapi.yaml",
+  "baseUrl": "https://api.openai.com/v1",
+  "authType": "bearer",
+  "authEnvVar": "OPENAI_API_KEY",
+  "docs": "https://platform.openai.com/docs/api-reference"
+}
