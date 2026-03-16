@@ -1,0 +1,11 @@
+{
+  "name": "vtex-orders",
+  "description": "VTEX Orders API — list, get, cancel, invoice orders",
+  "categories": ["ecommerce", "vtex", "orders"],
+  "specUrl": "https://raw.githubusercontent.com/vtex/openapi-schemas/master/VTEX%20-%20Orders%20API.json",
+  "baseUrl": "https://{accountName}.vtexcommercestable.com.br",
+  "authType": "apiKey",
+  "authHeader": "X-VTEX-API-AppKey",
+  "authEnvVar": "VTEX_API_APPKEY",
+  "docs": "https://developers.vtex.com/docs/api-reference/orders-api"
+}

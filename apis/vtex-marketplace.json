@@ -1,0 +1,11 @@
+{
+  "name": "vtex-marketplace",
+  "description": "VTEX Marketplace APIs — sellers, offers, SKU approval, price negotiation",
+  "categories": ["ecommerce", "vtex", "marketplace"],
+  "specUrl": "https://raw.githubusercontent.com/vtex/openapi-schemas/master/VTEX%20-%20Marketplace%20APIs.json",
+  "baseUrl": "https://{accountName}.vtexcommercestable.com.br",
+  "authType": "apiKey",
+  "authHeader": "X-VTEX-API-AppKey",
+  "authEnvVar": "VTEX_API_APPKEY",
+  "docs": "https://developers.vtex.com/docs/api-reference/marketplace-apis"
+}

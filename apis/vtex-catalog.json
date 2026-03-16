@@ -1,0 +1,11 @@
+{
+  "name": "vtex-catalog",
+  "description": "VTEX Catalog API — products, SKUs, categories, brands, specifications",
+  "categories": ["ecommerce", "vtex", "catalog"],
+  "specUrl": "https://raw.githubusercontent.com/vtex/openapi-schemas/master/VTEX%20-%20Catalog%20API.json",
+  "baseUrl": "https://{accountName}.vtexcommercestable.com.br",
+  "authType": "apiKey",
+  "authHeader": "X-VTEX-API-AppKey",
+  "authEnvVar": "VTEX_API_APPKEY",
+  "docs": "https://developers.vtex.com/docs/api-reference/catalog-api"
+}

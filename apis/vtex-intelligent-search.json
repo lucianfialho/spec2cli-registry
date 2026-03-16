@@ -1,0 +1,10 @@
+{
+  "name": "vtex-intelligent-search",
+  "description": "VTEX Intelligent Search API — facets, autocomplete, banners, search corrections",
+  "categories": ["ecommerce", "vtex", "search", "ai"],
+  "specUrl": "https://raw.githubusercontent.com/vtex/openapi-schemas/master/VTEX%20-%20Intelligent%20Search%20API.json",
+  "baseUrl": "https://{accountName}.vtexcommercestable.com.br",
+  "authType": "none",
+  "authEnvVar": "",
+  "docs": "https://developers.vtex.com/docs/api-reference/intelligent-search-api"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "vtex-payments",
+  "description": "VTEX Payments Gateway API — transactions, payments, settlements, refunds",
+  "categories": ["ecommerce", "vtex", "payments"],
+  "specUrl": "https://raw.githubusercontent.com/vtex/openapi-schemas/master/VTEX%20-%20Payments%20Gateway%20API.json",
+  "baseUrl": "https://{accountName}.vtexcommercestable.com.br",
+  "authType": "apiKey",
+  "authHeader": "X-VTEX-API-AppKey",
+  "authEnvVar": "VTEX_API_APPKEY",
+  "docs": "https://developers.vtex.com/docs/api-reference/payments-gateway-api"
+}

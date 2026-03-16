@@ -1,0 +1,11 @@
+{
+  "name": "vtex-masterdata-v2",
+  "description": "VTEX Master Data API v2 — documents, schemas, search, scroll",
+  "categories": ["ecommerce", "vtex", "data", "crm"],
+  "specUrl": "https://raw.githubusercontent.com/vtex/openapi-schemas/master/VTEX%20-%20Master%20Data%20API%20-%20v2.json",
+  "baseUrl": "https://{accountName}.vtexcommercestable.com.br",
+  "authType": "apiKey",
+  "authHeader": "X-VTEX-API-AppKey",
+  "authEnvVar": "VTEX_API_APPKEY",
+  "docs": "https://developers.vtex.com/docs/api-reference/master-data-api-v2"
+}

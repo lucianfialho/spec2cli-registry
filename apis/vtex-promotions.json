@@ -1,0 +1,11 @@
+{
+  "name": "vtex-promotions",
+  "description": "VTEX Promotions & Taxes API — coupons, promotions, tax rules",
+  "categories": ["ecommerce", "vtex", "promotions", "marketing"],
+  "specUrl": "https://raw.githubusercontent.com/vtex/openapi-schemas/master/VTEX%20-%20Promotions%20%26%20Taxes%20API.json",
+  "baseUrl": "https://{accountName}.vtexcommercestable.com.br",
+  "authType": "apiKey",
+  "authHeader": "X-VTEX-API-AppKey",
+  "authEnvVar": "VTEX_API_APPKEY",
+  "docs": "https://developers.vtex.com/docs/api-reference/promotions-and-taxes-api"
+}
