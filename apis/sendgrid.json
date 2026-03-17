@@ -1,0 +1,10 @@
+{
+  "name": "sendgrid",
+  "description": "SendGrid Mail API — send emails, templates, suppressions",
+  "categories": ["email", "communications", "marketing"],
+  "specUrl": "https://raw.githubusercontent.com/twilio/sendgrid-oai/main/spec/json/tsg_mail_v3.json",
+  "baseUrl": "https://api.sendgrid.com",
+  "authType": "bearer",
+  "authEnvVar": "SENDGRID_API_KEY",
+  "docs": "https://docs.sendgrid.com/api-reference"
+}
