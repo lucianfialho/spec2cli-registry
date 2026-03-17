@@ -1,0 +1,10 @@
+{
+  "name": "hubspot-deals",
+  "description": "HubSpot CRM Deals API — create, read, update, delete deals",
+  "categories": ["crm", "hubspot", "sales"],
+  "specUrl": "https://raw.githubusercontent.com/HubSpot/HubSpot-public-api-spec-collection/main/PublicApiSpecs/CRM/Deals/Rollouts/424/v3/deals.json",
+  "baseUrl": "https://api.hubapi.com",
+  "authType": "bearer",
+  "authEnvVar": "HUBSPOT_TOKEN",
+  "docs": "https://developers.hubspot.com/docs/api/crm/deals"
+}

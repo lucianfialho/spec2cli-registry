@@ -1,0 +1,10 @@
+{
+  "name": "hubspot-tickets",
+  "description": "HubSpot CRM Tickets API — create, read, update, delete support tickets",
+  "categories": ["crm", "hubspot", "support"],
+  "specUrl": "https://raw.githubusercontent.com/HubSpot/HubSpot-public-api-spec-collection/main/PublicApiSpecs/CRM/Tickets/Rollouts/424/v3/tickets.json",
+  "baseUrl": "https://api.hubapi.com",
+  "authType": "bearer",
+  "authEnvVar": "HUBSPOT_TOKEN",
+  "docs": "https://developers.hubspot.com/docs/api/crm/tickets"
+}

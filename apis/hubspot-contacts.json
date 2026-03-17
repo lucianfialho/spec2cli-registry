@@ -1,0 +1,10 @@
+{
+  "name": "hubspot-contacts",
+  "description": "HubSpot CRM Contacts API — create, read, update, delete contacts",
+  "categories": ["crm", "hubspot", "marketing"],
+  "specUrl": "https://raw.githubusercontent.com/HubSpot/HubSpot-public-api-spec-collection/main/PublicApiSpecs/CRM/Contacts/Rollouts/424/v3/contacts.json",
+  "baseUrl": "https://api.hubapi.com",
+  "authType": "bearer",
+  "authEnvVar": "HUBSPOT_TOKEN",
+  "docs": "https://developers.hubspot.com/docs/api/crm/contacts"
+}

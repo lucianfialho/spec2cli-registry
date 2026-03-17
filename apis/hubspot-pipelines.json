@@ -1,0 +1,10 @@
+{
+  "name": "hubspot-pipelines",
+  "description": "HubSpot CRM Pipelines API — sales and support pipelines, deal stages",
+  "categories": ["crm", "hubspot", "sales"],
+  "specUrl": "https://raw.githubusercontent.com/HubSpot/HubSpot-public-api-spec-collection/main/PublicApiSpecs/CRM/Pipelines/Rollouts/145896/v3/pipelines.json",
+  "baseUrl": "https://api.hubapi.com",
+  "authType": "bearer",
+  "authEnvVar": "HUBSPOT_TOKEN",
+  "docs": "https://developers.hubspot.com/docs/api/crm/pipelines"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "activecampaign",
+  "description": "ActiveCampaign API — contacts, automations, deals, campaigns, lists",
+  "categories": ["marketing", "crm", "email", "automation"],
+  "specUrl": "https://developers.activecampaign.com/openapi/v3.json",
+  "baseUrl": "https://{accountname}.api-us1.com/api/3",
+  "authType": "apiKey",
+  "authHeader": "Api-Token",
+  "authEnvVar": "ACTIVECAMPAIGN_API_TOKEN",
+  "docs": "https://developers.activecampaign.com/reference/overview"
+}
