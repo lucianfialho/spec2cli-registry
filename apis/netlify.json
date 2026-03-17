@@ -1,0 +1,10 @@
+{
+  "name": "netlify",
+  "description": "Netlify API — sites, deploys, forms, DNS, functions, build hooks",
+  "categories": ["infrastructure", "hosting", "jamstack", "serverless"],
+  "specUrl": "https://raw.githubusercontent.com/netlify/open-api/master/swagger.yml",
+  "baseUrl": "https://api.netlify.com/api/v1",
+  "authType": "bearer",
+  "authEnvVar": "NETLIFY_TOKEN",
+  "docs": "https://open-api.netlify.com/"
+}
