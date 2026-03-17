@@ -1,0 +1,10 @@
+{
+  "name": "render",
+  "description": "Render API — services, deploys, databases, environment groups, custom domains",
+  "categories": ["infrastructure", "hosting", "cloud", "paas"],
+  "specUrl": "https://api-docs.render.com/v1.0/openapi/render-public-api-1.json",
+  "baseUrl": "https://api.render.com/v1",
+  "authType": "bearer",
+  "authEnvVar": "RENDER_API_KEY",
+  "docs": "https://api-docs.render.com/"
+}
