@@ -1,0 +1,10 @@
+{
+  "name": "grafana",
+  "description": "Grafana HTTP API — dashboards, datasources, alerts, users, orgs",
+  "categories": ["monitoring", "observability", "devops"],
+  "specUrl": "https://raw.githubusercontent.com/grafana/grafana/main/public/api-merged.json",
+  "baseUrl": "http://localhost:3000/api",
+  "authType": "bearer",
+  "authEnvVar": "GRAFANA_TOKEN",
+  "docs": "https://grafana.com/docs/grafana/latest/developers/http_api/"
+}
