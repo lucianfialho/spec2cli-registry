@@ -1,0 +1,10 @@
+{
+  "name": "paddle",
+  "description": "Paddle Billing API — subscriptions, products, prices, transactions, customers",
+  "categories": ["payments", "billing", "subscriptions", "saas"],
+  "specUrl": "https://raw.githubusercontent.com/PaddleHQ/paddle-openapi/main/v1/openapi.yaml",
+  "baseUrl": "https://api.paddle.com",
+  "authType": "bearer",
+  "authEnvVar": "PADDLE_API_KEY",
+  "docs": "https://developer.paddle.com/api-reference/overview"
+}
