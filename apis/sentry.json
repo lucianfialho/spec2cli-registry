@@ -1,0 +1,10 @@
+{
+  "name": "sentry",
+  "description": "Sentry API — projects, issues, events, releases, alerts, teams",
+  "categories": ["monitoring", "error-tracking", "devops", "observability"],
+  "specUrl": "https://raw.githubusercontent.com/getsentry/sentry-api-schema/main/openapi-derefed.json",
+  "baseUrl": "https://sentry.io",
+  "authType": "bearer",
+  "authEnvVar": "SENTRY_AUTH_TOKEN",
+  "docs": "https://docs.sentry.io/api/"
+}
