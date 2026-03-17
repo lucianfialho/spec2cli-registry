@@ -1,0 +1,10 @@
+{
+  "name": "mailchimp",
+  "description": "Mailchimp Marketing API — lists, campaigns, audiences, templates, automations",
+  "categories": ["email", "marketing", "automation"],
+  "specUrl": "https://raw.githubusercontent.com/mailchimp/mailchimp-client-lib-codegen/main/spec/marketing.json",
+  "baseUrl": "https://us21.api.mailchimp.com/3.0",
+  "authType": "basic",
+  "authEnvVar": "MAILCHIMP_API_KEY",
+  "docs": "https://mailchimp.com/developer/marketing/api/"
+}
