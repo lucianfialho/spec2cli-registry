@@ -1,0 +1,14 @@
+{
+  "name": "gohighlevel-conversations",
+  "description": "GoHighLevel Conversations API \u2014 conversations api management via GHL CRM platform",
+  "categories": [
+    "crm",
+    "messaging",
+    "gohighlevel"
+  ],
+  "specUrl": "https://raw.githubusercontent.com/GoHighLevel/highlevel-api-docs/main/apps/conversations.json",
+  "baseUrl": "https://services.leadconnectorhq.com",
+  "authType": "bearer",
+  "authEnvVar": "GHL_TOKEN",
+  "docs": "https://developers.gohighlevel.com/"
+}

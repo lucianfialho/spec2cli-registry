@@ -1,0 +1,14 @@
+{
+  "name": "gohighlevel-store",
+  "description": "GoHighLevel Store API \u2014 store api management via GHL CRM platform",
+  "categories": [
+    "crm",
+    "ecommerce",
+    "gohighlevel"
+  ],
+  "specUrl": "https://raw.githubusercontent.com/GoHighLevel/highlevel-api-docs/main/apps/store.json",
+  "baseUrl": "https://services.leadconnectorhq.com",
+  "authType": "bearer",
+  "authEnvVar": "GHL_TOKEN",
+  "docs": "https://developers.gohighlevel.com/"
+}

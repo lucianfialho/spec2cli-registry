@@ -1,0 +1,14 @@
+{
+  "name": "gohighlevel-blogs",
+  "description": "GoHighLevel Blogs API \u2014 blogs api management via GHL CRM platform",
+  "categories": [
+    "crm",
+    "content",
+    "gohighlevel"
+  ],
+  "specUrl": "https://raw.githubusercontent.com/GoHighLevel/highlevel-api-docs/main/apps/blogs.json",
+  "baseUrl": "https://services.leadconnectorhq.com",
+  "authType": "bearer",
+  "authEnvVar": "GHL_TOKEN",
+  "docs": "https://developers.gohighlevel.com/"
+}

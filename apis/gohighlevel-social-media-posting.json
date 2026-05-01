@@ -1,0 +1,15 @@
+{
+  "name": "gohighlevel-social-media-posting",
+  "description": "GoHighLevel Social Media Posting API \u2014 social media posting api management via GHL CRM platform",
+  "categories": [
+    "crm",
+    "social-media",
+    "marketing",
+    "gohighlevel"
+  ],
+  "specUrl": "https://raw.githubusercontent.com/GoHighLevel/highlevel-api-docs/main/apps/social-media-posting.json",
+  "baseUrl": "https://services.leadconnectorhq.com",
+  "authType": "bearer",
+  "authEnvVar": "GHL_TOKEN",
+  "docs": "https://developers.gohighlevel.com/"
+}

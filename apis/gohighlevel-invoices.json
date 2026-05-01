@@ -1,0 +1,14 @@
+{
+  "name": "gohighlevel-invoices",
+  "description": "GoHighLevel Invoice API \u2014 invoice api management via GHL CRM platform",
+  "categories": [
+    "crm",
+    "billing",
+    "gohighlevel"
+  ],
+  "specUrl": "https://raw.githubusercontent.com/GoHighLevel/highlevel-api-docs/main/apps/invoices.json",
+  "baseUrl": "https://services.leadconnectorhq.com",
+  "authType": "bearer",
+  "authEnvVar": "GHL_TOKEN",
+  "docs": "https://developers.gohighlevel.com/"
+}

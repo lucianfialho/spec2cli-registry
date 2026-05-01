@@ -1,0 +1,14 @@
+{
+  "name": "gohighlevel-emails",
+  "description": "GoHighLevel Email API \u2014 email api management via GHL CRM platform",
+  "categories": [
+    "crm",
+    "email",
+    "gohighlevel"
+  ],
+  "specUrl": "https://raw.githubusercontent.com/GoHighLevel/highlevel-api-docs/main/apps/emails.json",
+  "baseUrl": "https://services.leadconnectorhq.com",
+  "authType": "bearer",
+  "authEnvVar": "GHL_TOKEN",
+  "docs": "https://developers.gohighlevel.com/"
+}

@@ -1,0 +1,14 @@
+{
+  "name": "gohighlevel-oauth",
+  "description": "GoHighLevel OAuth 2.0 \u2014 oauth 2.0 management via GHL CRM platform",
+  "categories": [
+    "crm",
+    "auth",
+    "gohighlevel"
+  ],
+  "specUrl": "https://raw.githubusercontent.com/GoHighLevel/highlevel-api-docs/main/apps/oauth.json",
+  "baseUrl": "https://services.leadconnectorhq.com",
+  "authType": "bearer",
+  "authEnvVar": "GHL_TOKEN",
+  "docs": "https://developers.gohighlevel.com/"
+}

@@ -1,0 +1,14 @@
+{
+  "name": "gohighlevel-opportunities",
+  "description": "GoHighLevel Opportunities API \u2014 opportunities api management via GHL CRM platform",
+  "categories": [
+    "crm",
+    "sales",
+    "gohighlevel"
+  ],
+  "specUrl": "https://raw.githubusercontent.com/GoHighLevel/highlevel-api-docs/main/apps/opportunities.json",
+  "baseUrl": "https://services.leadconnectorhq.com",
+  "authType": "bearer",
+  "authEnvVar": "GHL_TOKEN",
+  "docs": "https://developers.gohighlevel.com/"
+}

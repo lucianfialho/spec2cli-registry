@@ -1,0 +1,13 @@
+{
+  "name": "gohighlevel-companies",
+  "description": "GoHighLevel Companies API \u2014 companies api management via GHL CRM platform",
+  "categories": [
+    "crm",
+    "gohighlevel"
+  ],
+  "specUrl": "https://raw.githubusercontent.com/GoHighLevel/highlevel-api-docs/main/apps/companies.json",
+  "baseUrl": "https://services.leadconnectorhq.com",
+  "authType": "bearer",
+  "authEnvVar": "GHL_TOKEN",
+  "docs": "https://developers.gohighlevel.com/"
+}

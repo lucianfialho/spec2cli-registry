@@ -1,0 +1,13 @@
+{
+  "name": "gohighlevel-snapshots",
+  "description": "GoHighLevel Snapshots API \u2014 snapshots api management via GHL CRM platform",
+  "categories": [
+    "crm",
+    "gohighlevel"
+  ],
+  "specUrl": "https://raw.githubusercontent.com/GoHighLevel/highlevel-api-docs/main/apps/snapshots.json",
+  "baseUrl": "https://services.leadconnectorhq.com",
+  "authType": "bearer",
+  "authEnvVar": "GHL_TOKEN",
+  "docs": "https://developers.gohighlevel.com/"
+}

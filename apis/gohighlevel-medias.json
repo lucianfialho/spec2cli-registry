@@ -1,0 +1,14 @@
+{
+  "name": "gohighlevel-medias",
+  "description": "GoHighLevel Media Storage API \u2014 media storage api management via GHL CRM platform",
+  "categories": [
+    "crm",
+    "media",
+    "gohighlevel"
+  ],
+  "specUrl": "https://raw.githubusercontent.com/GoHighLevel/highlevel-api-docs/main/apps/medias.json",
+  "baseUrl": "https://services.leadconnectorhq.com",
+  "authType": "bearer",
+  "authEnvVar": "GHL_TOKEN",
+  "docs": "https://developers.gohighlevel.com/"
+}

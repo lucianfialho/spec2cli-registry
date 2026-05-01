@@ -1,0 +1,15 @@
+{
+  "name": "gohighlevel-payments",
+  "description": "GoHighLevel Payments API \u2014 payments api management via GHL CRM platform",
+  "categories": [
+    "crm",
+    "billing",
+    "payments",
+    "gohighlevel"
+  ],
+  "specUrl": "https://raw.githubusercontent.com/GoHighLevel/highlevel-api-docs/main/apps/payments.json",
+  "baseUrl": "https://services.leadconnectorhq.com",
+  "authType": "bearer",
+  "authEnvVar": "GHL_TOKEN",
+  "docs": "https://developers.gohighlevel.com/"
+}

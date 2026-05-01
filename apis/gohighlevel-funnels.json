@@ -1,0 +1,14 @@
+{
+  "name": "gohighlevel-funnels",
+  "description": "GoHighLevel Funnels API \u2014 funnels api management via GHL CRM platform",
+  "categories": [
+    "crm",
+    "marketing",
+    "gohighlevel"
+  ],
+  "specUrl": "https://raw.githubusercontent.com/GoHighLevel/highlevel-api-docs/main/apps/funnels.json",
+  "baseUrl": "https://services.leadconnectorhq.com",
+  "authType": "bearer",
+  "authEnvVar": "GHL_TOKEN",
+  "docs": "https://developers.gohighlevel.com/"
+}

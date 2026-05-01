@@ -1,0 +1,14 @@
+{
+  "name": "gohighlevel-brand-boards",
+  "description": "GoHighLevel Brand Boards API \u2014 brand boards api management via GHL CRM platform",
+  "categories": [
+    "crm",
+    "branding",
+    "gohighlevel"
+  ],
+  "specUrl": "https://raw.githubusercontent.com/GoHighLevel/highlevel-api-docs/main/apps/brand-boards.json",
+  "baseUrl": "https://services.leadconnectorhq.com",
+  "authType": "bearer",
+  "authEnvVar": "GHL_TOKEN",
+  "docs": "https://developers.gohighlevel.com/"
+}
