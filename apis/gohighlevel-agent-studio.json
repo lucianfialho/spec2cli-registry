@@ -1,0 +1,14 @@
+{
+  "name": "gohighlevel-agent-studio",
+  "description": "GoHighLevel Agent Studio APIs \u2014 agent studio apis management via GHL CRM platform",
+  "categories": [
+    "crm",
+    "ai",
+    "gohighlevel"
+  ],
+  "specUrl": "https://raw.githubusercontent.com/GoHighLevel/highlevel-api-docs/main/apps/agent-studio.json",
+  "baseUrl": "https://services.leadconnectorhq.com",
+  "authType": "bearer",
+  "authEnvVar": "GHL_TOKEN",
+  "docs": "https://developers.gohighlevel.com/"
+}

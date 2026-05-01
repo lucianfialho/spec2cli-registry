@@ -1,0 +1,14 @@
+{
+  "name": "gohighlevel-email-isv",
+  "description": "GoHighLevel Email ISV API \u2014 email isv api management via GHL CRM platform",
+  "categories": [
+    "crm",
+    "email",
+    "gohighlevel"
+  ],
+  "specUrl": "https://raw.githubusercontent.com/GoHighLevel/highlevel-api-docs/main/apps/email-isv.json",
+  "baseUrl": "https://services.leadconnectorhq.com",
+  "authType": "bearer",
+  "authEnvVar": "GHL_TOKEN",
+  "docs": "https://developers.gohighlevel.com/"
+}

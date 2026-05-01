@@ -1,0 +1,13 @@
+{
+  "name": "gohighlevel-users",
+  "description": "GoHighLevel Users API \u2014 users api management via GHL CRM platform",
+  "categories": [
+    "crm",
+    "gohighlevel"
+  ],
+  "specUrl": "https://raw.githubusercontent.com/GoHighLevel/highlevel-api-docs/main/apps/users.json",
+  "baseUrl": "https://services.leadconnectorhq.com",
+  "authType": "bearer",
+  "authEnvVar": "GHL_TOKEN",
+  "docs": "https://developers.gohighlevel.com/"
+}

@@ -1,0 +1,14 @@
+{
+  "name": "gohighlevel-ad-manager",
+  "description": "GoHighLevel Ad Manager API \u2014 ad manager api management via GHL CRM platform",
+  "categories": [
+    "crm",
+    "advertising",
+    "gohighlevel"
+  ],
+  "specUrl": "https://raw.githubusercontent.com/GoHighLevel/highlevel-api-docs/main/apps/ad-manager.json",
+  "baseUrl": "https://services.leadconnectorhq.com",
+  "authType": "bearer",
+  "authEnvVar": "GHL_TOKEN",
+  "docs": "https://developers.gohighlevel.com/"
+}

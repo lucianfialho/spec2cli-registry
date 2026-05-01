@@ -1,0 +1,14 @@
+{
+  "name": "gohighlevel-campaigns",
+  "description": "GoHighLevel Campaigns API \u2014 campaigns api management via GHL CRM platform",
+  "categories": [
+    "crm",
+    "marketing",
+    "gohighlevel"
+  ],
+  "specUrl": "https://raw.githubusercontent.com/GoHighLevel/highlevel-api-docs/main/apps/campaigns.json",
+  "baseUrl": "https://services.leadconnectorhq.com",
+  "authType": "bearer",
+  "authEnvVar": "GHL_TOKEN",
+  "docs": "https://developers.gohighlevel.com/"
+}

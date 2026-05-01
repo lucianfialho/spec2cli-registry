@@ -1,0 +1,15 @@
+{
+  "name": "gohighlevel-voice-ai",
+  "description": "GoHighLevel Voice AI API \u2014 voice ai api management via GHL CRM platform",
+  "categories": [
+    "crm",
+    "ai",
+    "telephony",
+    "gohighlevel"
+  ],
+  "specUrl": "https://raw.githubusercontent.com/GoHighLevel/highlevel-api-docs/main/apps/voice-ai.json",
+  "baseUrl": "https://services.leadconnectorhq.com",
+  "authType": "bearer",
+  "authEnvVar": "GHL_TOKEN",
+  "docs": "https://developers.gohighlevel.com/"
+}

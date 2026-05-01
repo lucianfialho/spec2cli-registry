@@ -1,0 +1,13 @@
+{
+  "name": "gohighlevel-marketplace",
+  "description": "GoHighLevel Developer marketplace API \u2014 developer marketplace api management via GHL CRM platform",
+  "categories": [
+    "crm",
+    "gohighlevel"
+  ],
+  "specUrl": "https://raw.githubusercontent.com/GoHighLevel/highlevel-api-docs/main/apps/marketplace.json",
+  "baseUrl": "https://services.leadconnectorhq.com",
+  "authType": "bearer",
+  "authEnvVar": "GHL_TOKEN",
+  "docs": "https://developers.gohighlevel.com/"
+}

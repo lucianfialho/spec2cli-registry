@@ -1,0 +1,14 @@
+{
+  "name": "gohighlevel-affiliate-manager",
+  "description": "GoHighLevel Affiliate Manager API \u2014 affiliate manager api management via GHL CRM platform",
+  "categories": [
+    "crm",
+    "affiliates",
+    "gohighlevel"
+  ],
+  "specUrl": "https://raw.githubusercontent.com/GoHighLevel/highlevel-api-docs/main/apps/affiliate-manager.json",
+  "baseUrl": "https://services.leadconnectorhq.com",
+  "authType": "bearer",
+  "authEnvVar": "GHL_TOKEN",
+  "docs": "https://developers.gohighlevel.com/"
+}

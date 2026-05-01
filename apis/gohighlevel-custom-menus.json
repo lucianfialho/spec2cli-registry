@@ -1,0 +1,13 @@
+{
+  "name": "gohighlevel-custom-menus",
+  "description": "GoHighLevel Custom menus API \u2014 custom menus api management via GHL CRM platform",
+  "categories": [
+    "crm",
+    "gohighlevel"
+  ],
+  "specUrl": "https://raw.githubusercontent.com/GoHighLevel/highlevel-api-docs/main/apps/custom-menus.json",
+  "baseUrl": "https://services.leadconnectorhq.com",
+  "authType": "bearer",
+  "authEnvVar": "GHL_TOKEN",
+  "docs": "https://developers.gohighlevel.com/"
+}

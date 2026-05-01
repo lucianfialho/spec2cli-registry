@@ -1,0 +1,14 @@
+{
+  "name": "gohighlevel-courses",
+  "description": "GoHighLevel MEMBERSHIPS API \u2014 memberships api management via GHL CRM platform",
+  "categories": [
+    "crm",
+    "education",
+    "gohighlevel"
+  ],
+  "specUrl": "https://raw.githubusercontent.com/GoHighLevel/highlevel-api-docs/main/apps/courses.json",
+  "baseUrl": "https://services.leadconnectorhq.com",
+  "authType": "bearer",
+  "authEnvVar": "GHL_TOKEN",
+  "docs": "https://developers.gohighlevel.com/"
+}
