@@ -1,0 +1,10 @@
+{
+  "name": "linode",
+  "description": "Linode (Akamai Cloud) API — instances, volumes, networking, NodeBalancers, Kubernetes",
+  "categories": ["infrastructure", "cloud", "hosting"],
+  "specUrl": "https://raw.githubusercontent.com/linode/linode-api-docs/refs/heads/development/openapi.json",
+  "baseUrl": "https://api.linode.com/v4",
+  "authType": "bearer",
+  "authEnvVar": "LINODE_TOKEN",
+  "docs": "https://techdocs.akamai.com/linode-api/reference/api"
+}
