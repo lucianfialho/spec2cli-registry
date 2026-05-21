@@ -1,0 +1,10 @@
+{
+  "name": "dataforseo",
+  "description": "DataForSEO API — SERP data, keyword research, backlinks, on-page analysis, domain analytics, and SEO labs across 437 endpoints",
+  "categories": ["seo", "data", "marketing", "serp"],
+  "specUrl": "https://raw.githubusercontent.com/dataforseo/OpenApiDocumentation/master/openapi_specification.yaml",
+  "baseUrl": "https://api.dataforseo.com",
+  "authType": "basic",
+  "authEnvVar": "DATAFORSEO_AUTH",
+  "docs": "https://docs.dataforseo.com/v3/"
+}
