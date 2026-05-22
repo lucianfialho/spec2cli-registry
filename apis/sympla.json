@@ -1,0 +1,11 @@
+{
+  "name": "sympla",
+  "description": "Sympla API — Brazilian event ticketing platform: events, orders, participants, check-ins",
+  "categories": ["events", "ticketing", "brazil"],
+  "specUrl": "https://raw.githubusercontent.com/lucianfialho/spec2cli-registry/main/specs/sympla.yaml",
+  "baseUrl": "https://api.sympla.com.br/public/v1.5.1",
+  "authType": "apiKey",
+  "authHeader": "s_token",
+  "authEnvVar": "SYMPLA_TOKEN",
+  "docs": "https://developers.sympla.com.br/api-doc/index.html"
+}

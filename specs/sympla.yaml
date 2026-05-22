@@ -1,0 +1,2278 @@
+openapi: 3.1.0
+servers:
+- url: https://api.sympla.com.br/public/v1.5.1
+  description: Servidor de produção
+info:
+  description: '# Introdução
+
+    Bem-vindo à API pública da Sympla! <br><br> A API da Sympla é a interface pública de acesso a dados da plataforma Sympla. Através dela é possível obter informações relacionadas aos eventos criados por você, como ingressos, pedidos e participantes. <br><br> A API disponibiliza endpoints com respostas em formato JSON, implementados conforme os princípios da arquitetura REST, garantindo integração segura, eficiente e de fácil consumo. O acesso aos dados é restrito aos eventos do próprio cliente, sendo necessária autenticação prévia para utilização dos recursos. Em conformidade com as boas práticas de design de APIs, campos cujo valor seja null são omitidos das respostas por padrão, de forma a otimizar a transferência de dados e evitar informações irrelevantes. Contudo, todos os endpoints oferecem suporte ao parâmetro FIELDS, que pode ser informado via querystring para especificação explícita dos atributos a serem incluídos na resposta. Quando esse parâmetro é utilizado, os campos com valor
+    null também serão retornados, garantindo maior controle sobre a estrutura da resposta.<br><br> Neste documento você encontrará a referência técnica de como acessar todos os serviços disponíveis da API. <br>
+
+
+    # Autenticação
+
+    Para executar requisições válidas à Sympla API é necessário uma chave de acesso (token) associada ao seu usuário na plataforma. Este token deverá assinar todas as requisições enviadas à API. <br><br> Para gerar a chave de acesso é preciso logar na plataforma Sympla, acessar o menu "<a href="https://organizador.sympla.com.br/minha-conta" target="_blank">Minha Conta</a>" (a partir do nome do seu usuário) e navegar até a aba "Integrações". <br><br> ![Autenticação](/api-doc/images/autenticacao.png) <br><br> Nesta página, basta informar um nome identificando o token e clicar em "Criar chave de acesso". Você poderá gerar mais de uma credencial de acesso conforme a sua necessidade.<br><br>
+
+    <!-- ReDoc-Inject: <security-definitions> -->
+
+    '
+  version: v1.5.1
+  title: Sympla API
+  termsOfService: https://termos-e-politicas.sympla.com.br/hc/pt-br/sections/360005978591-Termos-de-Uso-API
+  contact:
+    name: Suporte a API
+  x-logo:
+    url: /api-doc/images/logo-api.png
+tags:
+- name: Eventos
+  description: Esta API fornece acesso às informações de eventos criados na plataforma Sympla, exclusivamente aqueles vinculados ao usuário proprietário do token. <br><br> A API também permite a personalização dos resultados, possibilitando filtrar eventos dentro de uma janela de data ou restringir quais campos são relevantes e devem ser exibidos no retorno, como apenas nome do evento e descrição.
+- name: Pedidos
+  description: A API de pedidos proporciona informações de compras (ou inscrições, caso o evento seja gratuito) como dados de ingressos, participantes e pagamento. Um pedido pode conter mais de um ingresso e um ingresso está sempre associado a um único participante. <br><br> É possível consultar os dados para emissão da nota fiscal, caso o evento esteja configurado para solicitar estas informações durante o processo de compra (<a href="https://ajuda.sympla.com.br/hc/pt-br/articles/360000508286-Como-posso-coletar-os-dados-dos-participantes-para-emiss%C3%A3o-de-Nota-Fiscal-" target="_blank">saiba mais</a>).
+- name: Participantes
+  description: Com a API de participantes é possível obter informações relativas aos titulares dos ingressos do evento, como nome, e-mail e realizar check-in de um participante. <br><br> A API também retornará informações obtidas via campos customizados, caso tenham sido adicionados no formulário de inscrição do evento.
+- name: Check-in
+  description: 'Com a API de checkin é possível realizar a validação do ingresso dos usuários de três maneiras.
+
+
+    * Com o ID do ingresso também conhecido como ID do participante
+
+    * Numero do ticket, podendo ser ticketNumber quando estamos falando de DIY ou scanneableCode quando estamos falando dos eventos Bileto.
+
+    * E por fim, pelo QrCode gerado pelo App do cliente de forma dinâmica. Este terceiro modo usa um processo de
+
+    assinatura dos ingressos, que serve como uma camada a mais de segurança.
+
+    '
+paths:
+  /events:
+    get:
+      tags:
+      - Eventos
+      operationId: getAllEvent
+      summary: Listar eventos
+      description: Retorna os eventos criados pelo organizador.
+      x-codeSamples:
+      - lang: cURL
+        label: CLI
+        source: 'curl --request GET \
+
+          --url ''https://api.sympla.com.br/public/v1.5.1/events'' \
+
+          --header ''s_token: <TOKEN_USER>''
+
+          '
+      responses:
+        '200':
+          description: Sucesso!
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Response200Events'
+          x-oad-type: reference
+        '400':
+          description: Erro de dados
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResponseError'
+          x-oad-type: reference
+        '401':
+          description: Erro de autorização
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResponseError401'
+          x-oad-type: reference
+      parameters:
+      - name: from
+        in: query
+        description: Data no formato YYYY-MM-DD HH:mm:ss. Para filtrar todos os eventos que começam a partir da data informada
+        required: false
+        schema:
+          type: string
+        x-oad-type: parameter
+      - name: published
+        in: query
+        description: Por padrão somente os eventos publicados serão listados.
+        required: false
+        schema:
+          type: boolean
+          default: true
+        x-oad-type: parameter
+      - x-oad-type: reference
+        $ref: '#/components/parameters/Pagination_PageSize'
+      - x-oad-type: reference
+        $ref: '#/components/parameters/Pagination_Page'
+      - name: field_sort
+        in: query
+        description: Permite que os resultados sejam ordenados (apenas os campos id, start_date, end_date e name)
+        required: false
+        schema:
+          type: string
+          default: start_date
+        x-oad-type: parameter
+      - x-oad-type: reference
+        $ref: '#/components/parameters/Sort_Sort'
+      - x-oad-type: reference
+        $ref: '#/components/parameters/Filter_Fields'
+    x-oad-type: operation
+  /events/{event_id}:
+    get:
+      tags:
+      - Eventos
+      operationId: getEventId
+      summary: Listar evento por identificador
+      description: Retorna o evento correspondente ao identificador informado
+      schemes:
+      - https
+      x-codeSamples:
+      - lang: cURL
+        label: CLI
+        source: 'curl --request GET \
+
+          --url ''https://api.sympla.com.br/public/v1.5.1/events/123456'' \
+
+          --header ''s_token: <TOKEN_USER>''
+
+          '
+      responses:
+        '200':
+          description: Sucesso!
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  data:
+                    x-oad-type: object
+                    type: object
+                    $ref: '#/components/schemas/Events'
+          x-oad-type: response
+        '400':
+          description: Erro de dados
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResponseError'
+          x-oad-type: reference
+        '401':
+          description: Erro de autorização
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResponseError401'
+          x-oad-type: reference
+      parameters:
+      - name: event_id
+        in: path
+        required: true
+        description: Identificador único do evento
+        schema:
+          type: integer
+          format: int32
+        x-oad-type: parameter
+      - x-oad-type: reference
+        $ref: '#/components/parameters/Filter_Fields'
+    x-oad-type: operation
+  /events/{event_id}/presentations:
+    get:
+      tags:
+      - Eventos
+      operationId: getEventsPresentations
+      summary: Listar apresentações de um evento
+      description: Retorna lista de apresentações criadas pelo organizador para o evento.
+      x-codeSamples:
+      - lang: cURL
+        label: CLI
+        source: 'curl --request GET \
+
+          --url ''https://api.sympla.com.br/public/v1.5.1/events/<event_id>/presentations'' \
+
+          --header ''s_token: <TOKEN_USER>''
+
+          '
+      responses:
+        '200':
+          description: Sucesso!
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Response200Presentations'
+          x-oad-type: reference
+        '400':
+          description: Erro de dados
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResponseError'
+          x-oad-type: reference
+        '401':
+          description: Erro de autorização
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResponseError401'
+          x-oad-type: reference
+      parameters:
+      - name: event_id
+        in: path
+        required: true
+        description: Identificador único do evento
+        schema:
+          type: string
+      - name: from
+        in: query
+        description: Data no formato YYYY-MM-DD HH:mm:ss. Para filtrar todas as apresentações que começam a partir da data informada
+        required: false
+        schema:
+          type: string
+        x-oad-type: parameter
+      - name: published
+        in: query
+        description: Por padrão somente as apresentações publicadas serão listadas.
+        required: false
+        schema:
+          type: boolean
+          default: true
+        x-oad-type: parameter
+      - x-oad-type: reference
+        $ref: '#/components/parameters/Pagination_PageSize'
+      - x-oad-type: reference
+        $ref: '#/components/parameters/Pagination_Page'
+      - name: field_sort
+        in: query
+        description: Permite que os resultados sejam ordenados (apenas start_date)
+        required: false
+        schema:
+          type: string
+          default: start_date
+        x-oad-type: parameter
+      - x-oad-type: reference
+        $ref: '#/components/parameters/Sort_Sort'
+      - x-oad-type: reference
+        $ref: '#/components/parameters/Filter_Fields'
+      - name: filter_online_sector
+        in: query
+        description: Filtrar setores com venda online disponível.
+        required: false
+        schema:
+          type: boolean
+          default: true
+        x-oad-type: parameter
+    x-oad-type: operation
+  /events/{event_id}/presentations/{presentation_id}:
+    get:
+      tags:
+      - Eventos
+      operationId: getPresentationsId
+      summary: Listar apresentações por identificador
+      description: Retorna lista de apresentações criadas pelo organizador para o evento.
+      x-codeSamples:
+      - lang: cURL
+        label: CLI
+        source: 'curl --request GET \
+
+          --url ''https://api.sympla.com.br/public/v1.5.1/events/<event_id>/presentations/{presentation_id}'' \
+
+          --header ''s_token: <TOKEN_USER>''
+
+          '
+      responses:
+        '200':
+          description: Sucesso!
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Response200Presentations'
+          x-oad-type: reference
+        '400':
+          description: Erro de dados
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResponseError'
+          x-oad-type: reference
+        '401':
+          description: Erro de autorização
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResponseError401'
+          x-oad-type: reference
+      parameters:
+      - name: event_id
+        in: path
+        required: true
+        description: Identificador único do evento
+        schema:
+          type: integer
+          format: int32
+        x-oad-type: parameter
+      - name: presentation_id
+        in: path
+        required: true
+        description: Identificador único da apresentação
+        schema:
+          type: integer
+          format: int32
+        x-oad-type: parameter
+      - x-oad-type: reference
+        $ref: '#/components/parameters/Filter_Fields'
+    x-oad-type: operation
+  /events/{event_id}/orders:
+    get:
+      tags:
+      - Pedidos
+      operationId: getListOrders
+      summary: Listar pedidos por evento
+      description: Retorna os pedidos de um determinado evento.
+      responses:
+        '200':
+          description: Sucesso!
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Response200Orders'
+          x-oad-type: reference
+        '400':
+          description: Erro de dados
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResponseError'
+          x-oad-type: reference
+        '401':
+          description: Erro de autorização
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResponseError401'
+          x-oad-type: reference
+      parameters:
+      - name: event_id
+        in: path
+        required: true
+        description: Identificador único do evento
+        schema:
+          type: integer
+          format: int32
+        x-oad-type: parameter
+      - name: status
+        in: query
+        description: 'Retorna todos os pedidos com qualquer status. <br> **true:** Retorna os pedidos de todos os status;  <br> **false:** Retorna apenas os pedidos com status aprovado. <br>
+
+          '
+        required: false
+        schema:
+          type: boolean
+          default: false
+          enum:
+          - true
+          - false
+        x-oad-type: parameter
+      - name: buyer_email
+        in: query
+        required: false
+        description: Email do comprador
+        schema:
+          type: string
+        x-oad-type: parameter
+      - $ref: '#/components/parameters/Pagination_PageSize'
+      - $ref: '#/components/parameters/Pagination_Page'
+      - $ref: '#/components/parameters/Sort_FieldSortOrder'
+      - $ref: '#/components/parameters/Sort_Sort'
+      - $ref: '#/components/parameters/Filter_Fields'
+      - $ref: '#/components/parameters/Timezone'
+      - $ref: '#/components/parameters/From'
+      - $ref: '#/components/parameters/To'
+    x-oad-type: operation
+  /events/{event_id}/presentations/{presentation_id}/orders:
+    get:
+      tags:
+      - Pedidos
+      operationId: getListPresentatiionsOrders
+      summary: Listar pedidos por apresentação de evento
+      description: Retorna os pedidos de uma determinada apresentação de evento.
+      responses:
+        '200':
+          description: Sucesso!
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Response200Orders'
+          x-oad-type: reference
+        '400':
+          description: Erro de dados
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResponseError'
+          x-oad-type: reference
+        '401':
+          description: Erro de autorização
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResponseError401'
+          x-oad-type: reference
+      parameters:
+      - name: event_id
+        in: path
+        required: true
+        description: Identificador único do evento
+        schema:
+          type: integer
+          format: int32
+        x-oad-type: parameter
+      - name: presentation_id
+        in: path
+        required: true
+        description: Identificador único da apresentação
+        schema:
+          type: integer
+          format: int32
+        x-oad-type: parameter
+      - name: status
+        in: query
+        description: 'Retorna todos os pedidos com qualquer status. <br> **true:** Retorna os pedidos de todos os status;  <br> **false:** Retorna apenas os pedidos com status aprovado. <br>
+
+          '
+        required: false
+        schema:
+          type: boolean
+          default: false
+          enum:
+          - true
+          - false
+        x-oad-type: parameter
+      - name: buyer_email
+        in: query
+        required: false
+        description: Email do comprador
+        schema:
+          type: string
+        x-oad-type: parameter
+      - $ref: '#/components/parameters/Pagination_PageSize'
+      - $ref: '#/components/parameters/Pagination_Page'
+      - $ref: '#/components/parameters/Sort_FieldSortOrder'
+      - $ref: '#/components/parameters/Sort_Sort'
+      - $ref: '#/components/parameters/Filter_Fields'
+      - $ref: '#/components/parameters/Timezone'
+      - $ref: '#/components/parameters/From'
+      - $ref: '#/components/parameters/To'
+    x-oad-type: operation
+  /events/{event_id}/orders/{order_id}:
+    get:
+      tags:
+      - Pedidos
+      operationId: getOneOrder
+      summary: Listar pedido por identificador
+      description: Retorna o pedido correspondente ao identificador informado.
+      responses:
+        '200':
+          description: Sucesso!
+          content:
+            application/json:
+              schema:
+                x-oad-type: object
+                type: object
+                properties:
+                  data:
+                    x-oad-type: object
+                    type: object
+                    $ref: '#/components/schemas/Orders'
+          x-oad-type: response
+        '400':
+          description: Erro de dados
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResponseError'
+          x-oad-type: reference
+        '401':
+          description: Erro de autorização
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResponseError401'
+          x-oad-type: reference
+      parameters:
+      - name: event_id
+        in: path
+        required: true
+        description: Identificador único do evento
+        schema:
+          type: integer
+          format: int32
+        x-oad-type: parameter
+      - name: order_id
+        in: path
+        required: true
+        description: Identificador único do pedido
+        schema:
+          type: string
+        x-oad-type: parameter
+      - $ref: '#/components/parameters/Filter_Fields'
+      - $ref: '#/components/parameters/Timezone'
+      - $ref: '#/components/parameters/From'
+      - $ref: '#/components/parameters/To'
+    x-oad-type: operation
+  /events/{event_id}/orders/{order_id}/participants:
+    get:
+      tags:
+      - Pedidos
+      operationId: getAllParticipantsForOrder
+      summary: Listar participantes por pedido
+      description: Retorna o(s) participante(s) contido(s) em um determinado pedido.
+      responses:
+        '200':
+          description: Sucesso!
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Response200ParticipantsOrder'
+          x-oad-type: reference
+        '400':
+          description: Erro de dados
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResponseError'
+          x-oad-type: reference
+        '401':
+          description: Erro de autorização
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResponseError401'
+          x-oad-type: reference
+      parameters:
+      - name: event_id
+        in: path
+        required: true
+        description: Identificador único do evento
+        schema:
+          type: integer
+          format: int32
+        x-oad-type: parameter
+      - name: order_id
+        in: path
+        required: true
+        description: Identificador único do pedido
+        schema:
+          type: string
+        x-oad-type: parameter
+      - name: cancelled
+        in: query
+        description: 'Especifica se deve incluir pedidos cancelados na busca.
+
+          '
+        required: false
+        schema:
+          type: boolean
+        x-oad-type: parameter
+      - x-oad-type: reference
+        $ref: '#/components/parameters/Pagination_PageSize'
+      - x-oad-type: reference
+        $ref: '#/components/parameters/Pagination_Page'
+      - x-oad-type: reference
+        $ref: '#/components/parameters/Sort_FieldSortParticipant'
+      - x-oad-type: reference
+        $ref: '#/components/parameters/Sort_Sort'
+      - x-oad-type: reference
+        $ref: '#/components/parameters/Filter_Fields'
+      - x-oad-type: reference
+        $ref: '#/components/parameters/From'
+      - x-oad-type: reference
+        $ref: '#/components/parameters/To'
+  /events/{event_id}/participants:
+    get:
+      tags:
+      - Participantes
+      operationId: getAllParticipants
+      summary: Listar participantes por evento
+      description: Retorna os participantes de um determinado evento.
+      responses:
+        '200':
+          description: Sucesso!
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Response200Participants'
+          x-oad-type: reference
+        '400':
+          description: Erro de dados
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResponseError'
+          x-oad-type: reference
+        '401':
+          description: Erro de autorização
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResponseError401'
+          x-oad-type: reference
+      parameters:
+      - name: event_id
+        in: path
+        required: true
+        description: Identificador único do evento
+        schema:
+          type: integer
+          format: int32
+        x-oad-type: parameter
+      - name: cancelled_filter
+        in: query
+        description: 'Permite retornar participantes com status do pedido cancelado. <br> **include:** Retorna participantes dos pedidos com status cancelado e aprovado;  <br> **only:** Retorna participantes apenas dos pedidos com status cancelado. <br> **none:** Retorna participantes apenas dos pedidos com status aprovado. <br>
+
+          '
+        required: false
+        schema:
+          type: string
+          default: none
+          enum:
+          - none
+          - include
+          - only
+        x-oad-type: parameter
+      - name: ticket_number
+        in: query
+        required: false
+        title: Código do ingresso
+        description: Código escrito no ingresso. `Este atributo não deverá ser utilizado com identificador único do ingresso, pois em caso de troca de titularidade esse código irá mudar.`.
+        schema:
+          type: string
+        x-oad-type: parameter
+      - name: participant_email
+        in: query
+        required: false
+        title: E-mail do participante
+        description: Filtra o resultado de participantes conforme o e-mail informado. Ao usar em combinação com o `ticket_number`, deverá trazer somente os participantes com o e-mail informado vinculados ao ticket preenchido.
+        schema:
+          type: string
+        x-oad-type: parameter
+      - x-oad-type: reference
+        $ref: '#/components/parameters/Pagination_PageSize'
+      - x-oad-type: reference
+        $ref: '#/components/parameters/Pagination_Page'
+      - x-oad-type: reference
+        $ref: '#/components/parameters/Sort_FieldSortParticipant'
+      - x-oad-type: reference
+        $ref: '#/components/parameters/Sort_Sort'
+      - x-oad-type: reference
+        $ref: '#/components/parameters/Filter_Fields'
+      - x-oad-type: reference
+        $ref: '#/components/parameters/From'
+      - x-oad-type: reference
+        $ref: '#/components/parameters/To'
+    x-oad-type: operation
+  /events/{event_id}/presentations/{presentation_id}/participants:
+    get:
+      tags:
+      - Participantes
+      operationId: getAlPresentationlParticipants
+      summary: Listar participantes por apresentação de evento
+      description: Retorna os participantes de uma determinada apresentação de evento.
+      responses:
+        '200':
+          description: Sucesso!
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Response200Participants'
+          x-oad-type: reference
+        '400':
+          description: Erro de dados
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResponseError'
+          x-oad-type: reference
+        '401':
+          description: Erro de autorização
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResponseError401'
+          x-oad-type: reference
+      parameters:
+      - name: event_id
+        in: path
+        required: true
+        description: Identificador único do evento
+        schema:
+          type: integer
+          format: int32
+        x-oad-type: parameter
+      - name: presentation_id
+        in: path
+        required: true
+        description: Identificador único da apresentação
+        schema:
+          type: integer
+          format: int32
+        x-oad-type: parameter
+      - name: cancelled_filter
+        in: query
+        description: 'Permite retornar participantes com status do pedido cancelado. <br> **include:** Retorna participantes dos pedidos com status cancelado e aprovado;  <br> **only:** Retorna participantes apenas dos pedidos com status cancelado. <br> **none:** Retorna participantes apenas dos pedidos com status aprovado. <br>
+
+          '
+        required: false
+        schema:
+          type: string
+          default: none
+          enum:
+          - none
+          - include
+          - only
+        x-oad-type: parameter
+      - name: ticket_number
+        in: query
+        required: false
+        title: Código do ingresso
+        description: Código escrito no ingresso. `Este atributo não deverá ser utilizado com identificador único do ingresso, pois em caso de troca de titularidade esse código irá mudar.`.
+        schema:
+          type: string
+        x-oad-type: parameter
+      - name: participant_email
+        in: query
+        required: false
+        title: E-mail do participante
+        description: Filtra o resultado de participantes conforme o e-mail informado. Ao usar em combinação com o `ticket_number`, deverá trazer somente os participantes com o e-mail informado vinculados ao ticket preenchido.
+        schema:
+          type: string
+        x-oad-type: parameter
+      - x-oad-type: reference
+        $ref: '#/components/parameters/Pagination_PageSize'
+      - x-oad-type: reference
+        $ref: '#/components/parameters/Pagination_Page'
+      - x-oad-type: reference
+        $ref: '#/components/parameters/Sort_FieldSortParticipant'
+      - x-oad-type: reference
+        $ref: '#/components/parameters/Sort_Sort'
+      - x-oad-type: reference
+        $ref: '#/components/parameters/Filter_Fields'
+      - x-oad-type: reference
+        $ref: '#/components/parameters/From'
+      - x-oad-type: reference
+        $ref: '#/components/parameters/To'
+    x-oad-type: operation
+  /events/{event_id}/participants/{participant_id}:
+    get:
+      tags:
+      - Participantes
+      operationId: getOneParticipant
+      summary: Listar participante por id do ingresso
+      description: Retorna o participante correspondente ao ingresso informado.
+      responses:
+        '200':
+          description: Sucesso!
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  data:
+                    x-oad-type: object
+                    type: object
+                    allOf:
+                    - $ref: '#/components/schemas/Participants'
+                    - $ref: '#/components/schemas/ParticipantsPresentationIdAndTicketInfo'
+          x-oad-type: response
+        '400':
+          description: Erro de dados
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResponseError'
+          x-oad-type: reference
+        '401':
+          description: Erro de autorização
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResponseError401'
+          x-oad-type: reference
+      parameters:
+      - name: event_id
+        in: path
+        required: true
+        description: Identificador único do evento
+        schema:
+          type: integer
+          format: int32
+        x-oad-type: parameter
+      - name: participant_id
+        in: path
+        required: true
+        description: Identificador único do ingresso
+        schema:
+          type: integer
+          format: int32
+        x-oad-type: parameter
+      - name: cancelled_filter
+        in: query
+        description: 'Permite retornar participantes com status do pedido cancelado. <br> **include:** Retorna participantes dos pedidos com status cancelado e aprovado;  <br> **only:** Retorna participantes apenas dos pedidos com status cancelado. <br> **none:** Retorna participantes apenas dos pedidos com status aprovado. <br>
+
+          '
+        required: false
+        schema:
+          type: string
+          default: none
+          enum:
+          - none
+          - include
+          - only
+        x-oad-type: parameter
+      - x-oad-type: reference
+        $ref: '#/components/parameters/Filter_Fields'
+      - x-oad-type: reference
+        $ref: '#/components/parameters/From'
+      - x-oad-type: reference
+        $ref: '#/components/parameters/To'
+    x-oad-type: operation
+  /events/{event_id}/participants/ticketNumber/{ticket_number}:
+    get:
+      tags:
+      - Participantes
+      operationId: getOneParticipantByTicketNumber
+      summary: Listar participante por número de ingresso
+      description: Retorna o participante correspondente ao ingresso informado.
+      responses:
+        '200':
+          description: Sucesso!
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  data:
+                    x-oad-type: object
+                    type: object
+                    allOf:
+                    - $ref: '#/components/schemas/Participants'
+                    - $ref: '#/components/schemas/ParticipantsPresentationIdAndTicketInfo'
+          x-oad-type: response
+        '400':
+          description: Erro de dados
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResponseError'
+          x-oad-type: reference
+        '401':
+          description: Erro de autorização
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResponseError401'
+          x-oad-type: reference
+      parameters:
+      - name: event_id
+        in: path
+        required: true
+        description: Identificador único do evento
+        schema:
+          type: integer
+          format: int32
+        x-oad-type: parameter
+      - name: cancelled_filter
+        in: query
+        description: 'Permite retornar participantes com status do pedido cancelado. <br> **include:** Retorna participantes dos pedidos com status cancelado e aprovado;  <br> **only:** Retorna participantes apenas dos pedidos com status cancelado. <br> **none:** Retorna participantes apenas dos pedidos com status aprovado. <br>
+
+          '
+        required: false
+        schema:
+          type: string
+          default: none
+          enum:
+          - none
+          - include
+          - only
+        x-oad-type: parameter
+      - name: ticket_number
+        in: path
+        required: true
+        description: Número do ingresso
+        schema:
+          type: string
+        x-oad-type: parameter
+      - x-oad-type: reference
+        $ref: '#/components/parameters/Filter_Fields'
+      - x-oad-type: reference
+        $ref: '#/components/parameters/From'
+      - x-oad-type: reference
+        $ref: '#/components/parameters/To'
+    x-oad-type: operation
+  /events/{event_id}/participants/{participant_id}/checkin:
+    post:
+      tags:
+      - Check-in
+      operationId: checkInByParticipantId
+      summary: Check-in por id do ingresso.
+      description: Realiza o check-in de um participante por id do ingresso.
+      responses:
+        '200':
+          description: Sucesso!
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  data:
+                    x-oad-type: object
+                    type: object
+                    $ref: '#/components/schemas/Participants'
+          x-oad-type: response
+        '400':
+          description: Participante com check-in já realizado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResponseError400ParticipantHasAlreadyCheckedIn'
+          x-oad-type: reference
+        '401':
+          description: Erro de autorização
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResponseError401'
+          x-oad-type: reference
+        '404':
+          description: Participante não encontrado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResponseError404ParticipantNotFound'
+          x-oad-type: reference
+      parameters:
+      - name: event_id
+        in: path
+        required: true
+        description: Identificador único do evento
+        schema:
+          type: integer
+          format: int32
+        x-oad-type: parameter
+      - name: participant_id
+        in: path
+        required: true
+        description: ID do ingresso
+        schema:
+          type: integer
+        x-oad-type: parameter
+    x-oad-type: operation
+  /events/{event_id}/participants/ticketNumber/{ticket_number}/checkin:
+    post:
+      tags:
+      - Check-in
+      operationId: checkInByTicketNumber
+      summary: Check-in por número do ingresso.
+      description: Realiza o check-in de um participante por número do ingresso.
+      responses:
+        '200':
+          description: Sucesso!
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  data:
+                    x-oad-type: object
+                    type: object
+                    $ref: '#/components/schemas/Participants'
+          x-oad-type: response
+        '400':
+          description: Participante com check-in já realizado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResponseError400ParticipantHasAlreadyCheckedIn'
+          x-oad-type: reference
+        '401':
+          description: Erro de autorização
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResponseError401'
+          x-oad-type: reference
+        '404':
+          description: Participante não encontrado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResponseError404ParticipantNotFound'
+          x-oad-type: reference
+      parameters:
+      - name: event_id
+        in: path
+        required: true
+        description: Identificador único do evento
+        schema:
+          type: integer
+          format: int32
+        x-oad-type: parameter
+      - name: ticket_number
+        in: path
+        required: true
+        description: Número do ingresso
+        schema:
+          type: string
+        x-oad-type: parameter
+    x-oad-type: operation
+components:
+  securitySchemes:
+    ApiKeyAuth:
+      type: apiKey
+      in: header
+      name: s_token
+  schemas:
+    Response200Events:
+      description: Caso tudo esteja certo, será retornado uma coleção com os dados do evento que foram preenchidos pelo usuário ao criar o evento.
+      title: Lista de todos os Eventos
+      type: object
+      properties:
+        data:
+          x-oad-type: array
+          type: array
+          items:
+            x-oad-type: reference
+            $ref: '#/components/schemas/Events'
+        sort:
+          x-oad-type: reference
+          $ref: '#/components/schemas/Sort'
+        pagination:
+          x-oad-type: reference
+          $ref: '#/components/schemas/Pagination'
+    Response200Presentations:
+      description: Caso tudo esteja certo, será retornado uma coleção com os dados de apresentações que foram preenchidos pelo usuário ao criar o evento.
+      title: Lista de todos as apresentações
+      type: object
+      properties:
+        data:
+          x-oad-type: array
+          type: array
+          items:
+            x-oad-type: reference
+            $ref: '#/components/schemas/Presentations'
+        sort:
+          x-oad-type: reference
+          $ref: '#/components/schemas/Sort'
+        pagination:
+          x-oad-type: reference
+          $ref: '#/components/schemas/Pagination'
+    ResponseError:
+      description: Erro genérico
+      x-oad-type: object
+      type: object
+      properties:
+        error:
+          x-oad-type: boolean
+          type: boolean
+          title: Parâmetro informando que existe um erro.
+        code:
+          x-oad-type: integer
+          type: integer
+          title: Código de erro
+          format: int32
+          example: 1
+        message:
+          x-oad-type: string
+          type: string
+          title: Descrição do erro
+          example: Token not found.
+    ResponseError401:
+      description: Quando o usuário não tem autorização para acesso
+      x-oad-type: object
+      type: object
+      properties:
+        error:
+          x-oad-type: boolean
+          type: boolean
+          title: Parâmetro informando que existe um erro.
+        code:
+          x-oad-type: integer
+          type: integer
+          title: Código de erro
+          format: int32
+          example: 11
+        message:
+          x-oad-type: string
+          type: string
+          title: Descrição do erro
+          example: Invalid Token.
+    ResponseError401Unauthorized:
+      description: Quando o usuário não tem autorização para acesso
+      x-oad-type: object
+      type: object
+      properties:
+        error:
+          x-oad-type: boolean
+          type: boolean
+          title: Parâmetro informando que existe um erro.
+        code:
+          x-oad-type: integer
+          type: integer
+          title: Código de erro
+          format: int32
+          example: 69
+        message:
+          x-oad-type: string
+          type: string
+          title: Descrição do erro
+          example: Invalid Token.
+    ResponseError401InvalidSignature:
+      description: Quando a assinatura do ticket fornecida pelo QrCode é inválida
+      x-oad-type: object
+      type: object
+      properties:
+        error:
+          x-oad-type: boolean
+          type: boolean
+          title: Parâmetro informando que existe um erro.
+        code:
+          x-oad-type: integer
+          type: integer
+          title: Código de erro
+          format: int32
+          example: 269
+        message:
+          x-oad-type: string
+          type: string
+          title: Descrição do erro
+          example: Invalid signature.
+    ResponseError404ParticipantNotFound:
+      description: Quando não conseguiu encontrar o participante
+      x-oad-type: object
+      type: object
+      properties:
+        error:
+          x-oad-type: boolean
+          type: boolean
+          title: Parâmetro informando que existe um erro.
+        code:
+          x-oad-type: integer
+          type: integer
+          title: Código de erro
+          format: int32
+          example: 112
+        message:
+          x-oad-type: string
+          type: string
+          title: Descrição do erro
+          example: Participant not found.
+    ResponseError410:
+      description: Quando o QrCode informado está expirado
+      x-oad-type: object
+      type: object
+      properties:
+        error:
+          x-oad-type: boolean
+          type: boolean
+          title: Parâmetro informando que existe um erro.
+        code:
+          x-oad-type: integer
+          type: integer
+          title: Código de erro
+          format: int32
+          example: 169
+        message:
+          x-oad-type: string
+          type: string
+          title: Descrição do erro
+          example: The QRCode provided was expired.
+    ResponseError409TicketAlreadyConsumed:
+      description: Quando o ticket já foi consumido e o check-in foi realizado com sucesso.
+      x-oad-type: object
+      type: object
+      properties:
+        error:
+          x-oad-type: boolean
+          type: boolean
+          title: Parâmetro informando que existe um erro.
+        code:
+          x-oad-type: integer
+          type: integer
+          title: Código de erro
+          format: int32
+          example: 113
+        message:
+          x-oad-type: string
+          type: string
+          title: Descrição do erro
+          example: Ticket already consumed.
+    ResponseError400ParticipantHasAlreadyCheckedIn:
+      description: Quando o ticket do participante informado, já realizou o check-in.
+      x-oad-type: object
+      type: object
+      properties:
+        error:
+          x-oad-type: boolean
+          type: boolean
+          title: Parâmetro informando que existe um erro.
+        code:
+          x-oad-type: integer
+          type: integer
+          title: Código de erro
+          format: int32
+          example: 113
+        message:
+          x-oad-type: string
+          type: string
+          title: Descrição do erro
+          example: Participant has already checked-in.
+    Response200Participants:
+      description: Caso tudo esteja certo, será retornado uma coleção com os participantes do evento que estejam aprovados.
+      type: object
+      properties:
+        data:
+          x-oad-type: array
+          type: array
+          items:
+            x-oad-type: reference
+            allOf:
+            - $ref: '#/components/schemas/Participants'
+            - $ref: '#/components/schemas/ParticipantsPresentationIdAndTicketInfo'
+        sort:
+          x-oad-type: reference
+          $ref: '#/components/schemas/Sort'
+        pagination:
+          x-oad-type: reference
+          allOf:
+          - $ref: '#/components/schemas/Pagination'
+          - $ref: '#/components/schemas/PaginationTotalRecordsAndTotalPages'
+    Response200ParticipantsOrder:
+      description: Caso tudo esteja certo, será retornado uma coleção com os participantes do evento que estejam aprovados.
+      type: object
+      properties:
+        data:
+          x-oad-type: array
+          type: array
+          items:
+            x-oad-type: reference
+            allOf:
+            - $ref: '#/components/schemas/Participants'
+            - $ref: '#/components/schemas/ParticipantsPresentationIdAndTicketInfo'
+        sort:
+          x-oad-type: reference
+          $ref: '#/components/schemas/Sort'
+        pagination:
+          x-oad-type: reference
+          $ref: '#/components/schemas/Pagination'
+    Response200Orders:
+      description: Lista de todas os pedidos.
+      type: object
+      properties:
+        data:
+          x-oad-type: array
+          type: array
+          items:
+            x-oad-type: reference
+            $ref: '#/components/schemas/Orders'
+        sort:
+          x-oad-type: reference
+          $ref: '#/components/schemas/Sort'
+        pagination:
+          x-oad-type: reference
+          allOf:
+          - $ref: '#/components/schemas/Pagination'
+          - $ref: '#/components/schemas/PaginationTotalRecordsAndTotalPages'
+    Response200ParticipantsTypeCheckin:
+      description: Lista de todos os tipos de checkin do evento.
+      type: object
+      properties:
+        data:
+          x-oad-type: array
+          type: array
+          items:
+            x-oad-type: reference
+            $ref: '#/components/schemas/TypeCheckin'
+        sort:
+          x-oad-type: reference
+          $ref: '#/components/schemas/Sort'
+        pagination:
+          x-oad-type: reference
+          $ref: '#/components/schemas/Pagination'
+    Sort:
+      x-oad-type: object
+      type: object
+      properties:
+        field_sort:
+          x-oad-type: string
+          type: string
+          title: Nome do parâmetro pelo qual os resultados serão ordenados
+          example: id
+        sort:
+          x-oad-type: string
+          type: string
+          title: Ordenação aplicada
+          default: ASC
+          enum:
+          - ASC
+          - DESC
+    Pagination:
+      x-oad-type: object
+      type: object
+      properties:
+        has_next:
+          x-oad-type: boolean
+          title: Se há uma próxima página com resultados
+          type: boolean
+          example: true
+        has_prev:
+          x-oad-type: boolean
+          title: Se há uma página anterior de resultados
+          type: boolean
+          example: false
+        quantity:
+          x-oad-type: integer
+          title: Total de resultados
+          type: integer
+          format: int32
+          example: 10
+        offset:
+          x-oad-type: integer
+          title: Página anterior
+          type: integer
+          format: int32
+          example: 1
+        page:
+          x-oad-type: integer
+          type: integer
+          format: int32
+          title: Página atual
+          example: 1
+        page_size:
+          x-oad-type: integer
+          type: integer
+          format: int32
+          default: 100
+          title: Quantidade de resultados por página. Mínimo 1 e máximo 200.
+    PaginationTotalRecordsAndTotalPages:
+      x-oad-type: object
+      type: object
+      properties:
+        total_records:
+          x-oad-type: integer
+          type: integer
+          format: int32
+          title: Total de registros
+          example: 15
+        total_page:
+          x-oad-type: integer
+          type: integer
+          format: int32
+          title: Total de páginas
+          example: 2
+    Participants:
+      x-oad-type: object
+      type: object
+      properties:
+        id:
+          x-oad-type: string
+          type: string
+          title: Identificador único do ingresso
+          format: string
+          example: '102345'
+        event_id:
+          x-oad-type: string
+          type: string
+          title: Identificador único do evento
+          format: string
+          example: b1234
+        order_id:
+          x-oad-type: string
+          type: string
+          title: Identificador único do pedido
+          format: string
+          example: BC1BA1
+        order_status:
+          x-oad-type: string
+          type: string
+          title: Status do pedido
+          format: string
+          example: A
+        order_date:
+          x-oad-type: string
+          type: string
+          title: Data do pedido
+          example: '2018-10-21 10:12:23'
+        order_updated_date:
+          x-oad-type: string
+          type: string
+          title: Última atualização do pedido
+          example: '2018-10-21 15:12:23'
+        order_approved_date:
+          x-oad-type: string
+          type: string
+          title: Momento que o pedido foi autorizado na processadora
+          description: '<br> Data de quando um pedido foi aprovado na processadora de pagamentos e o status é alterado para `APPROVED`.<br>
+
+            '
+          example: '2018-10-21 11:34:21'
+        order_discount:
+          x-oad-type: string
+          type: string
+          nullable: true
+          title: Desconto do pedido
+          description: '`Campo opcional`<br>'
+          format: string
+          example: 10,00% - desconto10
+        first_name:
+          x-oad-type: string
+          type: string
+          nullable: true
+          title: Nome do participante
+          description: '`Campo opcional`<br>Nome que está escrito no ingresso'
+          example: Joaquim
+        last_name:
+          x-oad-type: string
+          type: string
+          nullable: true
+          title: Sobrenome do participante
+          description: '`Campo opcional`<br>Sobrenome que está escrito no ingresso'
+          example: Lopes
+        email:
+          x-oad-type: string
+          type: string
+          nullable: true
+          title: Email do participante
+          description: '`Campo opcional`<br>E-mail que está escrito no ingresso'
+          example: meuemail@sympla.com.br
+        ticket_number:
+          x-oad-type: string
+          type: string
+          title: Código do ingresso
+          description: Código escrito no ingresso. `Este atributo não deverá ser utilizado como identificador único do ingresso, pois em caso de troca de titularidade esse código irá mudar.`.
+          example: QHWA-1Q-3G0J
+        ticket_num_qr_code:
+          x-oad-type: string
+          type: string
+          title: Código do ingresso no QR Code
+          description: Código escrito no QR Code. `Este atributo não deverá ser utilizado como identificador único do ingresso, pois em caso de troca de titularidade esse código irá mudar.`.
+          example: QHWA1Q3G0J
+        ticket_name:
+          x-oad-type: string
+          type: string
+          title: Título do ingresso
+          example: VIP
+        sector_name:
+          x-oad-type: string
+          type: string
+          title: Setor do ingresso
+          example: 2o Pavimento
+        marked_place_name:
+          x-oad-type: string
+          type: string
+          title: Informação do local marcado adquirido no momento da compra do ingresso
+          example: A44
+        access_information:
+          x-oad-type: string
+          type: string
+          title: Descrição de informações de acesso ao evento
+          example: Portão 1'
+        ticket_sale_price:
+          x-oad-type: number
+          type: number
+          title: Preço de venda do ingresso
+          example: 123.5
+          description: '`Campo opcional`<br>'
+        checkin:
+          x-oad-type: object
+          type: object
+          title: Check-in realizado do ingresso
+          description: '`Campo opcional`<br>'
+          properties:
+            check_in:
+              x-oad-type: boolean
+              type: boolean
+              title: Indica se o check-in do ingresso foi realizado
+              example: true
+            check_in_date:
+              x-oad-type: string
+              type: string
+              nullable: true
+              title: "Data e hora em que o check-in foi realizado.\n\n Formato com Time Zone 'YYYY-MM-DDTHH:mm:ssZ' (2018-01-21T15:10:21-03:00)"
+              example: '2018-09-10T10:21:10-03:00'
+        custom_form:
+          x-oad-type: object
+          type: object
+          title: Formulário personalizado.
+          description: '`Campo opcional`<br>Lista de campos personalizados do formulário de compra do ingresso'
+          properties:
+            id:
+              x-oad-type: integer
+              type: integer
+              title: Identificador único do campo personalizado
+              description: '`Campo opcional`<br>'
+              format: int32
+              example: 1
+            name:
+              x-oad-type: string
+              type: string
+              title: Nome do campo personalizado
+              description: '`Campo opcional`<br>'
+              example: CPF
+            value:
+              x-oad-type: string
+              type: string
+              title: Valor do campo personalizado
+              description: '`Campo opcional`<br>'
+              example: 142.536.789-55
+    ParticipantsPresentationIdAndTicketInfo:
+      x-oad-type: object
+      type: object
+      properties:
+        ticket_created_at:
+          x-oad-type: string
+          type: string
+          nullable: true
+          title: Data do ingresso
+          description: '`Campo opcional`<br>'
+          example: '2018-10-21 10:12:23'
+        ticket_updated_at:
+          x-oad-type: string
+          type: string
+          nullable: true
+          title: Última atualização do ingresso
+          description: '`Campo opcional`<br>'
+          example: '2018-10-21 15:12:23'
+        presentation_id:
+          x-oad-type: integer
+          type: integer
+          nullable: true
+          title: Identificador da apresentação
+          description: '`Campo opcional`<br>'
+          format: int32
+          example: 54747
+    Orders:
+      x-oad-type: object
+      type: object
+      properties:
+        id:
+          x-oad-type: string
+          type: string
+          title: Identificador único do pedido
+          example: Q080KEE
+        event_id:
+          x-oad-type: string
+          type: string
+          title: Identificador único do evento
+          format: int32
+          example: b1234
+        order_date:
+          x-oad-type: string
+          type: string
+          title: Data do pedido
+          example: '2018-10-21 10:12:23'
+        order_status:
+          x-oad-type: string
+          type: string
+          title: Situação do pedido
+          default: APPROVED
+          enum:
+          - APPROVED
+          - CANCELLED
+          - PENDING
+          - REFUNDED
+          - NOT_APPROVED
+          - UNPAID
+          description: '<br> Um pedido pode ter diferentes status durante o ciclo de vida do evento: <br> **PENDING:** Significa que o pedido está pendente de aprovação (cartão de crédito) ou pendente de pagamento (boleto e débito bancário)  <br> **APPROVED:** Significa que o pedido está aprovado e não varia de acordo com o método de pagamento. <br> **NOT_APPROVED:** Significa que o pedido não foi aprovado e, portanto, não foi pago. Esse status é exibido apenas para pedidos adquiridos por cartão de crédito; <br> **UNPAID:** Significa que o pagamento não foi concluído e, portanto, não foi pago. Esse status é exibido apenas para pedidos adquiridos por boleto bancário ou débito online; <br> **REFUNDED:** Significa que foi solicitado o reembolso de um pedido. <br> **CANCELLED:** Significa que o pedido foi reembolsado. <br>
+
+            '
+        updated_date:
+          x-oad-type: string
+          type: string
+          title: Última atualização do pedido
+          description: '<br> Data de quando um pedido foi atualizado. Campo atualizado quando ocorre uma mudança no campo `order_status` ou `troca de titularidade`.<br>
+
+            '
+          example: '2018-10-10 23:34:21'
+        approved_date:
+          x-oad-type: string
+          type: string
+          title: Momento que o pedido foi autorizado na processadora
+          description: '<br> Data de quando um pedido foi aprovado na processadora de pagamentos e o status é alterado para `APPROVED`.<br>
+
+            '
+          example: '2018-10-10 23:34:21'
+        discount_code:
+          x-oad-type: string
+          type: string
+          nullable: true
+          title: Código promocional utilizado
+          description: '`Campo opcional`<br>'
+          format: string
+          example: 10,00% - desconto10
+        transaction_type:
+          x-oad-type: string
+          type: string
+          title: Forma de pagamento
+          default: CREDIT_CARD
+          enum:
+          - BOLETO_BANCARIO
+          - CREDIT_CARD
+          - DEBITO_ONLINE
+          - DEBIT_CARD
+          - FREE
+          - MANUAL
+          - PAYPAL
+          - PDV
+          description: '<br> Tipo de transação indica a forma de pagamento do pedido: <br> **MANUAL** : O pedido foi criado via ferramenta de "adicionar pedido" na aba de "Participantes". <br> **FREE** : Pedido grátis; <br> **DEBITO_ONLINE** : Pagamento via débito online; <br> **CREDIT_CARD** : Pagamento via cartão de crédito; <br> **BOLETO_BANCARIO** : Pagamento via boleto bancário; <br> **PAYPAL** : Pagamento via Paypal; <br> **PDV** : Pagamento realizado junto ao ponto de venda; <br>
+
+            '
+        order_total_sale_price:
+          x-oad-type: number
+          type: number
+          title: Valor total do pedido
+          description: '`Campo opcional`<br>'
+          format: float
+          example: 12.5
+        order_total_net_value:
+          x-oad-type: number
+          type: number
+          title: Valor total liquido do pedido
+          description: '`Campo opcional`<br>'
+          format: float
+          example: 10.0
+        buyer_first_name:
+          x-oad-type: string
+          type: string
+          nullable: true
+          title: Nome do comprador
+          description: '`Campo opcional`<br>'
+          example: Joaquim
+        buyer_last_name:
+          x-oad-type: string
+          type: string
+          nullable: true
+          title: Sobrenome do comprador
+          description: '`Campo opcional`<br>'
+          example: Lopes
+        buyer_email:
+          x-oad-type: string
+          type: string
+          title: E-mail do comprador
+          example: meuemail@sympla.com.br
+        presentation_id:
+          x-oad-type: integer
+          type: integer
+          nullable: true
+          title: Identificador da apresentação
+          description: '`Campo opcional`<br>'
+          format: int32
+          example: 54747
+        invoice_info:
+          x-oad-type: object
+          type: object
+          title: Dados para emissão da Nota Fiscal
+          description: '`Campo opcional`<br> Dados pessoais e de endereço do tomador do pedido. <br> **Obs:** Para que esses dados sejam habilitados, é necessário solicitar à Sympla. <a href="https://ajuda.sympla.com.br/hc/pt-br/articles/360000508286-Como-posso-coletar-os-dados-dos-participantes-para-emiss%C3%A3o-de-Nota-Fiscal-" target="_blank">Saiba mais</a>
+
+            '
+          properties:
+            doc_type:
+              x-oad-type: string
+              type: string
+              nullable: true
+              title: Tipo do documento do tomador
+              description: '`Campo opcional`<br>'
+              example: CPF
+            doc_number:
+              x-oad-type: string
+              type: string
+              nullable: true
+              title: Número do documento do tomador
+              description: '`Campo opcional`<br>'
+              example: 142.536.789-55
+            client_name:
+              x-oad-type: string
+              type: string
+              title: Nome do tomador
+              nullable: true
+              description: '`Campo opcional`<br>'
+              example: Joaquim
+            address_zip_code:
+              x-oad-type: string
+              type: string
+              nullable: true
+              title: CEP do tomador
+              description: '`Campo opcional`<br>'
+              example: 31112-000
+            address_street:
+              x-oad-type: string
+              type: string
+              nullable: true
+              title: Endereço do tomador
+              description: '`Campo opcional`<br>'
+              example: Rua Fernandes Tourinho
+            address_street_number:
+              x-oad-type: string
+              type: string
+              nullable: true
+              title: Número do endereço do tomador
+              description: '`Campo opcional`<br>'
+              example: '147'
+            address_street2:
+              x-oad-type: string
+              type: string
+              nullable: true
+              title: Segundo endereço do tomador
+              description: '`Campo opcional`<br>'
+              example: 10º Andar
+            address_neighborhood:
+              x-oad-type: string
+              type: string
+              nullable: true
+              title: Bairro do tomador
+              description: '`Campo opcional`<br>'
+              example: Funcionários
+            address_city:
+              x-oad-type: string
+              type: string
+              nullable: true
+              title: Cidade do tomador
+              description: '`Campo opcional`<br>'
+              example: Belo Horizonte
+            address_state:
+              x-oad-type: string
+              type: string
+              nullable: true
+              title: Estado do tomador
+              description: '`Campo opcional`<br>'
+              example: MG
+        utm:
+          x-oad-type: object
+          type: object
+          title: Dados da UTM
+          description: 'Dados de UTM da campanha. Podem haver campos que não sejam necessários, nesses casos, eles não vião na resposta.
+
+            '
+          properties:
+            utm_source:
+              x-oad-type: string
+              type: string
+              nullable: true
+              title: Origem da Campanha
+              description: '`Campo opcional`<br>'
+              example: facebook
+            utm_medium:
+              x-oad-type: string
+              type: string
+              nullable: true
+              title: Mídia Utilizada
+              description: '`Campo opcional`<br>'
+              example: cpc
+            utm_campaign:
+              x-oad-type: string
+              type: string
+              nullable: true
+              title: Nome da Campanha
+              description: '`Campo opcional`<br>'
+              example: nome_da_campanha
+            utm_term:
+              x-oad-type: string
+              type: string
+              nullable: true
+              title: Palavra-Chave Utilizada
+              description: '`Campo opcional`<br>'
+              example: campanha
+            utm_content:
+              x-oad-type: string
+              type: string
+              nullable: true
+              title: Conteúdo Específico
+              description: '`Campo opcional`<br>'
+              example: banner
+            user_agent:
+              x-oad-type: string
+              type: string
+              title: Informações Sobre o Navegador do Usuário
+              example: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36
+            referrer:
+              x-oad-type: string
+              type: string
+              nullable: true
+              title: URL de Referência
+              description: '`Campo opcional`<br>'
+              example: campanha.site.com
+    TypeCheckin:
+      x-oad-type: object
+      type: object
+      properties:
+        id:
+          x-oad-type: integer
+          type: integer
+          title: Id do tipo de checkin
+          format: int32
+          example: 1
+        name:
+          x-oad-type: string
+          type: string
+          title: Nome do tipo de checkin
+          example: Bolsa + Caneca
+        type:
+          x-oad-type: string
+          type: string
+          title: Tipo de checkin
+          example: KIT
+    InstanceCheckin:
+      x-oad-type: object
+      type: object
+      properties:
+        checkin_id:
+          x-oad-type: integer
+          type: integer
+          title: Id do tipo de checkin
+          format: int32
+          example: 1020
+        check_in:
+          x-oad-type: boolean
+          type: boolean
+          title: Se o checkin foi realizado ou não
+          example: true
+        check_in_date:
+          x-oad-type: string
+          type: string
+          title: Data do checkin em YYYY-MM-DD HH:mm:ss
+          example: '2018-10-10 23:34:21'
+    Events:
+      x-oad-type: object
+      type: object
+      properties:
+        id:
+          x-oad-type: string
+          type: string
+          title: Identificador único do evento
+          example: b1
+        reference_id:
+          x-oad-type: integer
+          type: integer
+          title: Identificador do evento nos sistemas Sympla
+          format: int32
+          example: 1
+        start_date:
+          x-oad-type: string
+          type: string
+          title: Data de início do evento
+          description: Data no formato YYYY-MM-DD HH:mm:ss (2018-01-21 15:10:21).
+          example: '2018-09-21 22:00:00'
+        end_date:
+          x-oad-type: string
+          type: string
+          title: Data final do evento
+          description: Data no formato YYYY-MM-DD HH:mm:ss (2018-01-21 15:10:21).
+          example: '2018-09-22 12:00:01'
+        name:
+          x-oad-type: string
+          type: string
+          title: Nome do evento
+          example: Workshop da Sympla
+        detail:
+          x-oad-type: string
+          type: string
+          nullable: true
+          title: Descrição do evento
+          description: '`Campo opcional`<br>Descrição do evento. Todo HTML utilizado na formatação será retornado.'
+          example: <b>Ola esse é um evento da Sympla</b><br><h1>Sejam todos bem-vindo</h1>
+        private_event:
+          x-oad-type: bit
+          type: bit
+          title: Se o evento está como privado
+          description: '`Campo opcional`'
+          example: 1
+        published:
+          x-oad-type: bit
+          type: bit
+          title: Se o evento está publicado
+          description: Eventos publicados estarão com o valor `1` enquanto eventos em rascunho estarão com o valor `0`.
+          example: 1
+        cancelled:
+          x-oad-type: bit
+          type: bit
+          title: Se o evento está cancelado
+          description: '`Campo opcional`<br>'
+          example: 0
+        image:
+          x-oad-type: string
+          type: string
+          title: Url da imagem do evento
+          description: URL da imagem do evento utilizada como banner ou logo do evento.
+          example: https://www.sympla.com.br/images/public/logo-sympla-new-blue@3x.png
+        url:
+          x-oad-type: string
+          type: string
+          title: Url do evento
+          example: https://www.sympla.com.br/festa-800__332504
+        address:
+          x-oad-type: reference
+          allOf:
+          - $ref: '#/components/schemas/EventsAddress'
+        host:
+          x-oad-type: reference
+          allOf:
+          - $ref: '#/components/schemas/EventHost'
+        category_prim:
+          x-oad-type: reference
+          allOf:
+          - $ref: '#/components/schemas/EventCategoryPrim'
+        category_sec:
+          x-oad-type: reference
+          allOf:
+          - $ref: '#/components/schemas/EventCategorySec'
+    EventsAddress:
+      x-oad-type: object
+      type: object
+      description: '`Campo opcional`<br>Caso o evento seja on-line as propriedades `city` e `name` serão `Evento online` e o restante será `null`.
+
+        '
+      properties:
+        name:
+          x-oad-type: string
+          type: string
+          nullable: true
+          title: Título da localização
+          example: Loja Contempo
+          description: '`Campo opcional`<br>'
+        address:
+          x-oad-type: string
+          type: string
+          nullable: true
+          title: Endereço
+          example: Rua Fernandes Tourinho
+          description: '`Campo opcional`<br>'
+        address_num:
+          x-oad-type: string
+          type: string
+          nullable: true
+          title: Número do local
+          example: AB45ER78
+          description: '`Campo opcional`<br>'
+        address_alt:
+          x-oad-type: string
+          type: string
+          nullable: true
+          title: Complemento
+          example: 10º Andar
+          description: '`Campo opcional`<br>'
+        neighborhood:
+          x-oad-type: string
+          type: string
+          nullable: true
+          title: Bairro
+          description: '`Campo opcional`<br>'
+          example: Funcionários
+        city:
+          x-oad-type: string
+          type: string
+          nullable: true
+          title: Cidade
+          description: '`Campo opcional`<br>'
+          example: Belo Horizonte
+        state:
+          x-oad-type: string
+          type: string
+          nullable: true
+          title: Estado
+          description: '`Campo opcional`<br>Abreviação de 2 dígitos'
+          example: MG
+        zip_code:
+          x-oad-type: string
+          type: string
+          nullable: true
+          title: CEP
+          description: '`Campo opcional`<br>'
+          example: 31112-000
+        country:
+          x-oad-type: string
+          type: string
+          nullable: true
+          title: País
+          description: '`Campo opcional`<br>'
+          example: BR
+        lon:
+          x-oad-type: number
+          type: number
+          nullable: true
+          title: Longitude
+          description: '`Campo opcional`<br>'
+          example: '-12.3456789'
+        lat:
+          x-oad-type: number
+          type: number
+          nullable: true
+          title: Latitude
+          description: '`Campo opcional`<br>'
+          example: '-12.3456789'
+    EventHost:
+      x-oad-type: object
+      type: object
+      properties:
+        name:
+          x-oad-type: string
+          type: string
+          title: Nome do organizador
+          example: Sympla Eventos
+        description:
+          x-oad-type: string
+          type: string
+          nullable: true
+          title: Descrição do organizador
+          example: Área responsável pela organização de eventos da empresa Sympla
+          description: '`Campo opcional`<br>'
+    EventCategoryPrim:
+      x-oad-type: object
+      type: object
+      properties:
+        name:
+          x-oad-type: string
+          type: string
+          title: Nome da categoria primária
+          example: encontro-networking
+    EventCategorySec:
+      x-oad-type: object
+      type: object
+      description: '`Campo opcional`<br>'
+      properties:
+        name:
+          x-oad-type: string
+          type: string
+          nullable: true
+          title: Nome da categoria secundária
+          description: Campo opcional, possui name `NULL` quando não cadastrado.
+          example: encontro-festa
+    Sector:
+      x-oad-type: object
+      type: object
+      properties:
+        id:
+          x-oad-type: integer
+          type: integer
+          title: Identificador único do setor na apresentação
+          format: int32
+          example: 1
+        name:
+          x-oad-type: string
+          type: string
+          title: Nome do setor
+          example: Plateia Superior
+        has_online_sale_available:
+          x-oad-type: boolean
+          type: boolean
+          title: Setor tem venda online disponível
+          example: true
+    Presentations:
+      x-oad-type: object
+      type: object
+      properties:
+        id:
+          x-oad-type: integer
+          type: integer
+          title: Identificador da apresentação do evento
+          format: int32
+          example: 1
+        event_id:
+          x-oad-type: string
+          type: string
+          title: Identificador único do evento
+          example: b1
+        reference_id:
+          x-oad-type: integer
+          type: integer
+          title: Identificador do evento nos sistemas Sympla
+          format: int32
+          example: 1
+        start_date:
+          x-oad-type: string
+          type: string
+          title: Data de início do evento
+          description: Data no formato YYYY-MM-DD HH:mm:ss (2018-01-21 15:10:21).
+          example: '2018-09-21 22:00:00'
+        name:
+          x-oad-type: string
+          type: string
+          title: Nome do evento
+          example: Workshop da Sympla
+        detail:
+          x-oad-type: string
+          type: string
+          title: Descrição do evento
+          description: Descrição do evento. Todo HTML utilizado na formatação será retornado.
+          example: <b>Ola esse é um evento da Sympla</b><br><h1>Sejam todos bem-vindo</h1>
+        private_event:
+          x-oad-type: bit
+          type: bit
+          title: Se o evento está como privado
+          example: 1
+        private_presentation:
+          x-oad-type: bit
+          type: bit
+          title: Se a apresentaçaõ está como privada
+          example: 1
+        event_published:
+          x-oad-type: bit
+          type: bit
+          title: Se o evento está publicado
+          description: Eventos publicados estarão com o valor `1` enquanto eventos em rascunho estarão com o valor `0`.
+          example: 1
+        event_cancelled:
+          x-oad-type: bit
+          type: bit
+          title: Se o evento está cancelado
+          description: '`Campo opcional`<br>'
+          example: 0
+        presentation_published:
+          x-oad-type: bit
+          type: bit
+          title: Se a apresentação está publicada
+          description: Apresentações publicadas estarão com o valor `1` enquanto eventos em rascunho estarão com apresentações com o valor `0`.
+          example: 1
+        presentation_cancelled:
+          x-oad-type: bit
+          type: bit
+          title: Se a apresentação está cancelada
+          description: '`Campo opcional`<br>'
+          example: 0
+        image:
+          x-oad-type: string
+          type: string
+          title: Url da imagem do evento
+          description: URL da imagem do evento utilizada como banner ou logo do evento.
+          example: https://www.sympla.com.br/images/public/logo-sympla-new-blue@3x.png
+        url:
+          x-oad-type: string
+          type: string
+          title: Url do evento
+          example: https://bileto.sympla.com.br/event/123456/d/123456
+        address:
+          x-oad-type: reference
+          allOf:
+          - $ref: '#/components/schemas/EventsAddress'
+        host:
+          x-oad-type: reference
+          allOf:
+          - $ref: '#/components/schemas/EventHost'
+        category_prim:
+          x-oad-type: reference
+          allOf:
+          - $ref: '#/components/schemas/EventCategoryPrim'
+        category_sec:
+          x-oad-type: reference
+          allOf:
+          - $ref: '#/components/schemas/EventCategorySec'
+        sectors:
+          x-oad-type: array
+          type: array
+          title: Lista de setores
+          description: Lista de setores disponíveis na apresentação
+          items:
+            x-oad-type: reference
+            $ref: '#/components/schemas/Sector'
+  parameters:
+    TokenUser:
+      name: S_TOKEN
+      in: header
+      description: Chave de acesso da conta do Usuário
+      required: true
+      schema:
+        type: string
+      x-oad-type: parameter
+    Pagination_PageSize:
+      name: page_size
+      in: query
+      description: Especifica quantos registros por página o usuário deseja. Mínimo 1 e maxímo 200.
+      required: false
+      schema:
+        type: integer
+        default: 100
+      x-oad-type: parameter
+    Pagination_Page:
+      name: page
+      in: query
+      description: Número da página dos resultados.
+      required: false
+      schema:
+        type: integer
+        default: 1
+      x-oad-type: parameter
+    Pagination_Offset:
+      name: offset
+      in: query
+      description: Número da página anterior
+      required: false
+      schema:
+        type: string
+      x-oad-type: parameter
+    Sort_FieldSort:
+      name: field_sort
+      in: query
+      description: Permite que os resultados sejam ordenados.
+      required: false
+      schema:
+        type: string
+      x-oad-type: parameter
+    Sort_FieldSortOrder:
+      name: field_sort
+      in: query
+      description: Permite que os resultados sejam ordenados. (apenas os campos id, order_date, updated_date, approved_date)
+      required: false
+      schema:
+        type: string
+      x-oad-type: parameter
+    Sort_FieldSortParticipant:
+      name: field_sort
+      in: query
+      description: Permite que os resultados sejam ordenados. (apenas os campos id, order_id, order_date, order_updated_date, order_approved_date, check_in_date, ticket_number, ticket_num_qr_code)
+      required: false
+      schema:
+        type: string
+      x-oad-type: parameter
+    Sort_Sort:
+      name: sort
+      in: query
+      required: false
+      schema:
+        type: string
+        enum:
+        - ASC
+        - DESC
+        default: ASC
+      x-oad-type: parameter
+    Filter_Fields:
+      name: fields
+      in: query
+      description: 'Deve ser utilizado para retornar apenas os atributos indicados do objeto. Os atributos indicados devem ser separados por **","**
+
+        '
+      required: false
+      schema:
+        type: string
+      x-oad-type: parameter
+    Timezone:
+      name: timezone
+      in: query
+      description: Especifica em que timezone os campos data/hora devem ser retornado.
+      required: false
+      schema:
+        type: string
+        default: America/Sao_Paulo
+      x-oad-type: parameter
+    From:
+      name: from
+      in: query
+      description: Especifica a partir de que data as informações de compras, ou inscrições caso o evento seja gratuito, deve ser retornados. A data deve está no formato YYYY-MM-DD. A hora é opcional e se informada deve está no formato  HH:mm:ss. Caso a hora não seja informado será considerado 00:00:00
+      required: false
+      schema:
+        type: string
+      x-oad-type: parameter
+    To:
+      name: to
+      in: query
+      description: Especifica até de que data as informações de compras, ou inscrições caso o evento seja gratuito, deve ser retornados. A data deve está no formato YYYY-MM-DD. A hora é opcional e se informada deve está no formato  HH:mm:ss. Caso a hora não seja informado será considerado 23:59:59
+      required: false
+      schema:
+        type: string
+      x-oad-type: parameter
+security:
+- ApiKeyAuth: []
