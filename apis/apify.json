@@ -1,0 +1,10 @@
+{
+  "name": "apify",
+  "description": "Apify API — web scraping and automation platform: actors, datasets, key-value stores, runs, schedules, webhooks (231 operations)",
+  "categories": ["scraping", "automation", "data"],
+  "specUrl": "https://docs.apify.com/api/openapi.json",
+  "baseUrl": "https://api.apify.com",
+  "authType": "bearer",
+  "authEnvVar": "APIFY_TOKEN",
+  "docs": "https://docs.apify.com/api/v2"
+}
