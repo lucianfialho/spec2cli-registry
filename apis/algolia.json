@@ -1,0 +1,11 @@
+{
+  "name": "algolia",
+  "description": "Algolia search and discovery API for full-text search and relevance tuning",
+  "categories": ["search", "developer-tools"],
+  "specUrl": "https://raw.githubusercontent.com/algolia/api-clients-automation/main/specs/bundled/search.yml",
+  "baseUrl": "https://{appId}.algolia.net",
+  "authType": "apiKey",
+  "authEnvVar": "ALGOLIA_API_KEY",
+  "authHeader": "X-Algolia-API-Key",
+  "docs": "https://www.algolia.com/doc/api-reference/"
+}
