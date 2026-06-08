@@ -1,0 +1,11 @@
+{
+  "name": "pagerduty",
+  "description": "PagerDuty incident management and on-call scheduling API",
+  "categories": ["monitoring", "devops", "incident-management"],
+  "specUrl": "https://raw.githubusercontent.com/PagerDuty/api-schema/main/reference/REST/openapiv3.json",
+  "baseUrl": "https://api.pagerduty.com",
+  "authType": "apiKey",
+  "authEnvVar": "PAGERDUTY_API_KEY",
+  "authHeader": "Authorization",
+  "docs": "https://developer.pagerduty.com/api-reference/"
+}
