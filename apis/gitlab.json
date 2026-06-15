@@ -1,0 +1,11 @@
+{
+  "name": "gitlab",
+  "description": "GitLab REST API — repositories, merge requests, CI/CD pipelines, issues, and project management",
+  "categories": ["devops", "git", "cicd", "project-management"],
+  "specUrl": "https://gitlab.com/gitlab-org/gitlab/-/raw/master/doc/api/openapi/openapi_v2.yaml",
+  "baseUrl": "https://gitlab.com/api/v4",
+  "authType": "apiKey",
+  "authEnvVar": "GITLAB_TOKEN",
+  "authHeader": "PRIVATE-TOKEN",
+  "docs": "https://docs.gitlab.com/ee/api/rest/"
+}
