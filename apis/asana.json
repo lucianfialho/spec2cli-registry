@@ -1,0 +1,10 @@
+{
+  "name": "asana",
+  "description": "Asana API — manage tasks, projects, teams, and workspaces",
+  "categories": ["productivity", "project-management", "collaboration"],
+  "specUrl": "https://raw.githubusercontent.com/Asana/openapi/master/defs/asana_oas.yaml",
+  "baseUrl": "https://app.asana.com/api/1.0",
+  "authType": "bearer",
+  "authEnvVar": "ASANA_ACCESS_TOKEN",
+  "docs": "https://developers.asana.com/reference/rest-api-reference"
+}
