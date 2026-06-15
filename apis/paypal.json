@@ -1,0 +1,10 @@
+{
+  "name": "paypal",
+  "description": "PayPal REST API — payments, orders, subscriptions, payouts, and dispute management",
+  "categories": ["payments", "fintech", "ecommerce", "billing"],
+  "specUrl": "https://raw.githubusercontent.com/paypal/paypal-rest-api-specifications/main/openapi/payments_payment_v2.json",
+  "baseUrl": "https://api-m.paypal.com",
+  "authType": "bearer",
+  "authEnvVar": "PAYPAL_ACCESS_TOKEN",
+  "docs": "https://developer.paypal.com/api/rest/"
+}
