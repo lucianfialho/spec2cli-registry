@@ -1,0 +1,10 @@
+{
+  "name": "slack",
+  "description": "Slack Web API — send messages, manage channels, files, users and reactions in workspaces",
+  "categories": ["messaging", "collaboration", "communications"],
+  "specUrl": "https://raw.githubusercontent.com/APIs-guru/openapi-directory/main/APIs/slack.com/1.7.0/openapi.yaml",
+  "baseUrl": "https://slack.com/api",
+  "authType": "bearer",
+  "authEnvVar": "SLACK_BOT_TOKEN",
+  "docs": "https://api.slack.com/web"
+}
