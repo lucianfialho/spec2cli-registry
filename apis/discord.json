@@ -1,0 +1,10 @@
+{
+  "name": "discord",
+  "description": "Discord HTTP API — manage guilds, channels, messages, users, and bots",
+  "categories": ["messaging", "communication", "social"],
+  "specUrl": "https://raw.githubusercontent.com/discord/discord-api-spec/main/specs/openapi.json",
+  "baseUrl": "https://discord.com/api/v10",
+  "authType": "bearer",
+  "authEnvVar": "DISCORD_BOT_TOKEN",
+  "docs": "https://discord.com/developers/docs/reference"
+}
