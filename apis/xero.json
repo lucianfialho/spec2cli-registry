@@ -1,0 +1,10 @@
+{
+  "name": "xero",
+  "description": "Xero Accounting API — invoices, contacts, accounts, bank reconciliation, payroll",
+  "categories": ["accounting", "finance", "erp"],
+  "specUrl": "https://raw.githubusercontent.com/XeroAPI/Xero-OpenAPI/master/xero_accounting.yaml",
+  "baseUrl": "https://api.xero.com/api.xro/2.0",
+  "authType": "bearer",
+  "authEnvVar": "XERO_ACCESS_TOKEN",
+  "docs": "https://developer.xero.com/documentation/api/accounting/overview"
+}
