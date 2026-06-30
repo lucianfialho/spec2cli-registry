@@ -1,0 +1,10 @@
+{
+  "name": "zendesk-sunshine-conversations",
+  "description": "Zendesk Sunshine Conversations API — omnichannel customer messaging across web, mobile, and social channels",
+  "categories": ["customer-support", "messaging", "communications", "crm"],
+  "specUrl": "https://raw.githubusercontent.com/zendesk/sunshine-conversations-api-spec/master/openapi.yaml",
+  "baseUrl": "https://api.smooch.io",
+  "authType": "bearer",
+  "authEnvVar": "ZENDESK_API_KEY",
+  "docs": "https://developer.zendesk.com/documentation/conversations/"
+}
