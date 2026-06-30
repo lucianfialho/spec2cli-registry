@@ -1,0 +1,11 @@
+{
+  "name": "dropbox-sign",
+  "description": "Dropbox Sign API — request and manage legally binding e-signatures on documents",
+  "categories": ["e-signature", "documents", "workflows"],
+  "specUrl": "https://raw.githubusercontent.com/hellosign/hellosign-openapi/main/openapi.yaml",
+  "baseUrl": "https://api.hellosign.com/v3",
+  "authType": "apiKey",
+  "authEnvVar": "DROPBOX_SIGN_API_KEY",
+  "authHeader": "Authorization",
+  "docs": "https://developers.hellosign.com/docs/overview/"
+}
