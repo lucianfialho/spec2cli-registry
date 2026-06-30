@@ -1,0 +1,11 @@
+{
+  "name": "vault",
+  "description": "HashiCorp Vault API — secrets, auth methods, policies, tokens, PKI, transit",
+  "categories": ["security", "secrets", "devops", "infrastructure"],
+  "specUrl": "https://raw.githubusercontent.com/hashicorp/vault-client-go/main/openapi.json",
+  "baseUrl": "http://127.0.0.1:8200/v1",
+  "authType": "apiKey",
+  "authHeader": "X-Vault-Token",
+  "authEnvVar": "VAULT_TOKEN",
+  "docs": "https://developer.hashicorp.com/vault/api-docs"
+}
