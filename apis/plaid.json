@@ -1,0 +1,11 @@
+{
+  "name": "plaid",
+  "description": "Plaid financial data API for bank account linking and transactions",
+  "categories": ["fintech", "banking", "payments"],
+  "specUrl": "https://raw.githubusercontent.com/plaid/plaid-openapi/master/2020-09-14.yml",
+  "baseUrl": "https://production.plaid.com",
+  "authType": "apiKey",
+  "authEnvVar": "PLAID_SECRET",
+  "authHeader": "PLAID-SECRET",
+  "docs": "https://plaid.com/docs/api/"
+}
