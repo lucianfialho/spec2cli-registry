@@ -1,0 +1,10 @@
+{
+  "name": "figma",
+  "description": "Figma REST API — read files, components, comments, images; manage webhooks and variables",
+  "categories": ["design", "collaboration", "developer-tools"],
+  "specUrl": "https://raw.githubusercontent.com/figma/rest-api-spec/main/openapi/openapi.yaml",
+  "baseUrl": "https://api.figma.com",
+  "authType": "bearer",
+  "authEnvVar": "FIGMA_ACCESS_TOKEN",
+  "docs": "https://www.figma.com/developers/api"
+}
