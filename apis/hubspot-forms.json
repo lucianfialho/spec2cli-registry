@@ -1,0 +1,10 @@
+{
+  "name": "hubspot-forms",
+  "description": "HubSpot Marketing Forms API — create, read, update, and delete marketing forms",
+  "categories": ["marketing", "hubspot", "forms"],
+  "specUrl": "https://raw.githubusercontent.com/HubSpot/HubSpot-public-api-spec-collection/main/PublicApiSpecs/Marketing/Forms/Rollouts/144909/v3/forms.json",
+  "baseUrl": "https://api.hubapi.com",
+  "authType": "bearer",
+  "authEnvVar": "HUBSPOT_TOKEN",
+  "docs": "https://developers.hubspot.com/docs/api/marketing/forms"
+}
