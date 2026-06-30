@@ -1,0 +1,10 @@
+{
+  "name": "resend",
+  "description": "Resend API — send emails, manage domains, API keys, audiences, contacts",
+  "categories": ["email", "communications", "developer-tools"],
+  "specUrl": "https://raw.githubusercontent.com/resend/resend-openapi/main/resend.yaml",
+  "baseUrl": "https://api.resend.com",
+  "authType": "bearer",
+  "authEnvVar": "RESEND_API_KEY",
+  "docs": "https://resend.com/docs/api-reference"
+}
