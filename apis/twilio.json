@@ -1,0 +1,10 @@
+{
+  "name": "twilio",
+  "description": "Twilio REST API — SMS, calls, accounts, messaging",
+  "categories": ["communications", "sms", "voice", "messaging"],
+  "specUrl": "https://raw.githubusercontent.com/twilio/twilio-oai/main/spec/json/twilio_api_v2010.json",
+  "baseUrl": "https://api.twilio.com",
+  "authType": "basic",
+  "authEnvVar": "TWILIO_AUTH_TOKEN",
+  "docs": "https://www.twilio.com/docs/usage/api"
+}
