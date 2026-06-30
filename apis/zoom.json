@@ -1,0 +1,10 @@
+{
+  "name": "zoom",
+  "description": "Zoom REST API — manage meetings, webinars, users, recordings, reports and dashboards",
+  "categories": ["video-conferencing", "collaboration", "communications"],
+  "specUrl": "https://raw.githubusercontent.com/APIs-guru/openapi-directory/main/APIs/zoom.us/2.0.0/openapi.yaml",
+  "baseUrl": "https://api.zoom.us/v2",
+  "authType": "bearer",
+  "authEnvVar": "ZOOM_ACCESS_TOKEN",
+  "docs": "https://developers.zoom.us/docs/api/"
+}
