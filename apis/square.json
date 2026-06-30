@@ -1,0 +1,10 @@
+{
+  "name": "square",
+  "description": "Square API — payments, orders, customers, inventory, and business management",
+  "categories": ["payments", "fintech", "ecommerce", "pos"],
+  "specUrl": "https://raw.githubusercontent.com/square/connect-api-specification/master/api.json",
+  "baseUrl": "https://connect.squareup.com",
+  "authType": "bearer",
+  "authEnvVar": "SQUARE_ACCESS_TOKEN",
+  "docs": "https://developer.squareup.com/reference/square"
+}
