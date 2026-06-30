@@ -1,0 +1,10 @@
+{
+  "name": "vercel",
+  "description": "Vercel API — deployments, projects, domains, environment variables, teams",
+  "categories": ["infrastructure", "hosting", "serverless", "jamstack"],
+  "specUrl": "https://openapi.vercel.sh/",
+  "baseUrl": "https://api.vercel.com",
+  "authType": "bearer",
+  "authEnvVar": "VERCEL_TOKEN",
+  "docs": "https://vercel.com/docs/rest-api"
+}
