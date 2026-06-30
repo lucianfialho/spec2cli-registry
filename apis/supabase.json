@@ -1,0 +1,10 @@
+{
+  "name": "supabase",
+  "description": "Supabase Management API — projects, organizations, databases, functions, secrets",
+  "categories": ["infrastructure", "database", "backend", "open-source"],
+  "specUrl": "https://raw.githubusercontent.com/supabase/supabase/master/apps/docs/spec/api_v1_openapi.json",
+  "baseUrl": "https://api.supabase.com/v1",
+  "authType": "bearer",
+  "authEnvVar": "SUPABASE_ACCESS_TOKEN",
+  "docs": "https://supabase.com/docs/reference/api/introduction"
+}
