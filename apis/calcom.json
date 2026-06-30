@@ -1,0 +1,10 @@
+{
+  "name": "calcom",
+  "description": "Cal.com API v2 — bookings, event types, availability, schedules, webhooks",
+  "categories": ["scheduling", "calendar", "saas", "open-source"],
+  "specUrl": "https://cal.com/docs/api-reference/v2/openapi.json",
+  "baseUrl": "https://api.cal.com/v2",
+  "authType": "bearer",
+  "authEnvVar": "CAL_API_KEY",
+  "docs": "https://cal.com/docs/api-reference/v2"
+}
