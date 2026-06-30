@@ -1,0 +1,10 @@
+{
+  "name": "vultr",
+  "description": "Vultr API — instances, bare metal, Kubernetes, block storage, DNS, load balancers",
+  "categories": ["infrastructure", "cloud", "hosting"],
+  "specUrl": "https://raw.githubusercontent.com/vultr/vultr-csharp/main/blob/v0.0.1.json",
+  "baseUrl": "https://api.vultr.com/v2",
+  "authType": "bearer",
+  "authEnvVar": "VULTR_API_KEY",
+  "docs": "https://www.vultr.com/api/"
+}
