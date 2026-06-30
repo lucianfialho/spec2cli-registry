@@ -1,0 +1,10 @@
+{
+  "name": "flyio",
+  "description": "Fly.io Machines API — apps, machines, volumes, secrets, networking",
+  "categories": ["infrastructure", "cloud", "hosting", "containers"],
+  "specUrl": "https://docs.machines.dev/swagger/doc.json",
+  "baseUrl": "https://api.machines.dev/v1",
+  "authType": "bearer",
+  "authEnvVar": "FLY_API_TOKEN",
+  "docs": "https://fly.io/docs/machines/api/"
+}
