@@ -1,0 +1,10 @@
+{
+  "name": "hetzner",
+  "description": "Hetzner Cloud API — servers, volumes, networks, firewalls, load balancers",
+  "categories": ["infrastructure", "cloud", "hosting"],
+  "specUrl": "https://raw.githubusercontent.com/MaximilianKoestler/hcloud-openapi/main/openapi/hcloud.json",
+  "baseUrl": "https://api.hetzner.cloud/v1",
+  "authType": "bearer",
+  "authEnvVar": "HETZNER_API_TOKEN",
+  "docs": "https://docs.hetzner.cloud/"
+}
