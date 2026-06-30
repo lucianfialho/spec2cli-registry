@@ -1,0 +1,10 @@
+{
+  "name": "spotify",
+  "description": "Spotify Web API — search music, manage playlists, control playback, browse artists and albums",
+  "categories": ["music", "entertainment", "media"],
+  "specUrl": "https://raw.githubusercontent.com/APIs-guru/openapi-directory/main/APIs/spotify.com/1.0.0/openapi.yaml",
+  "baseUrl": "https://api.spotify.com/v1",
+  "authType": "bearer",
+  "authEnvVar": "SPOTIFY_ACCESS_TOKEN",
+  "docs": "https://developer.spotify.com/documentation/web-api/"
+}
