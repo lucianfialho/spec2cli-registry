@@ -1,0 +1,11 @@
+{
+  "name": "adyen-checkout",
+  "description": "Adyen Checkout API — initiate payments, sessions, payment status and refunds",
+  "categories": ["payments", "fintech", "ecommerce"],
+  "specUrl": "https://raw.githubusercontent.com/APIs-guru/openapi-directory/main/APIs/adyen.com/CheckoutService-v71/71/openapi.yaml",
+  "baseUrl": "https://checkout-test.adyen.com/v71",
+  "authType": "apiKey",
+  "authEnvVar": "ADYEN_API_KEY",
+  "authHeader": "X-API-Key",
+  "docs": "https://docs.adyen.com/api-explorer/Checkout/71/overview"
+}
