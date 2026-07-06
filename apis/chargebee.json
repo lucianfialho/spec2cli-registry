@@ -1,0 +1,10 @@
+{
+  "name": "chargebee",
+  "description": "Chargebee API — subscription billing, recurring payments, invoices, and revenue operations",
+  "categories": ["payments", "billing", "subscriptions", "fintech"],
+  "specUrl": "https://raw.githubusercontent.com/chargebee/openapi/main/spec/chargebee_sdk_spec.yaml",
+  "baseUrl": "https://{site}.chargebee.com/api/v2",
+  "authType": "bearer",
+  "authEnvVar": "CHARGEBEE_API_KEY",
+  "docs": "https://apidocs.chargebee.com/docs/api"
+}
