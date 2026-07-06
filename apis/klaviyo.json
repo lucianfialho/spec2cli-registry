@@ -1,0 +1,11 @@
+{
+  "name": "klaviyo",
+  "description": "Klaviyo API — email and SMS marketing, customer profiles, segments, flows, and analytics",
+  "categories": ["marketing", "email", "sms", "analytics"],
+  "specUrl": "https://raw.githubusercontent.com/klaviyo/openapi/main/openapi/stable.json",
+  "baseUrl": "https://a.klaviyo.com",
+  "authType": "apiKey",
+  "authHeader": "Authorization",
+  "authEnvVar": "KLAVIYO_API_KEY",
+  "docs": "https://developers.klaviyo.com/en/reference/api_overview"
+}
