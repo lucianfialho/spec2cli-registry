@@ -1,0 +1,10 @@
+{
+  "name": "webflow",
+  "description": "Webflow API — sites, pages, CMS collections, assets, forms, and e-commerce",
+  "categories": ["cms", "website-builder", "e-commerce", "developer-tools"],
+  "specUrl": "https://raw.githubusercontent.com/webflow/openapi-spec/main/openapi/v2.yml",
+  "baseUrl": "https://api.webflow.com/v2",
+  "authType": "bearer",
+  "authEnvVar": "WEBFLOW_API_TOKEN",
+  "docs": "https://developers.webflow.com/data/reference"
+}
