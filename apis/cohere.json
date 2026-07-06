@@ -1,0 +1,10 @@
+{
+  "name": "cohere",
+  "description": "Cohere API — large language models for text generation, embeddings, classification, and reranking",
+  "categories": ["ai", "nlp", "machine-learning", "embeddings"],
+  "specUrl": "https://raw.githubusercontent.com/cohere-ai/cohere-developer-experience/main/cohere-openapi.yaml",
+  "baseUrl": "https://api.cohere.com",
+  "authType": "bearer",
+  "authEnvVar": "COHERE_API_KEY",
+  "docs": "https://docs.cohere.com/reference/about"
+}
