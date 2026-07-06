@@ -1,0 +1,10 @@
+{
+  "name": "twilio-messaging",
+  "description": "Twilio Messaging API — send and receive SMS, MMS, and WhatsApp messages",
+  "categories": ["communications", "sms", "messaging"],
+  "specUrl": "https://raw.githubusercontent.com/twilio/twilio-oai/main/spec/json/twilio_messaging_v1.json",
+  "baseUrl": "https://messaging.twilio.com",
+  "authType": "bearer",
+  "authEnvVar": "TWILIO_AUTH_TOKEN",
+  "docs": "https://www.twilio.com/docs/messaging/api"
+}
