@@ -1,0 +1,10 @@
+{
+  "name": "box",
+  "description": "Box Platform API — manage files, folders, users, collaborations, and metadata in cloud content storage",
+  "categories": ["storage", "files", "collaboration"],
+  "specUrl": "https://raw.githubusercontent.com/APIs-guru/openapi-directory/main/APIs/box.com/2.0.0/openapi.yaml",
+  "baseUrl": "https://api.box.com/2.0",
+  "authType": "bearer",
+  "authEnvVar": "BOX_ACCESS_TOKEN",
+  "docs": "https://developer.box.com/reference/"
+}
