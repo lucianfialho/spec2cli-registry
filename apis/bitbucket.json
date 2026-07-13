@@ -1,0 +1,10 @@
+{
+  "name": "bitbucket",
+  "description": "Bitbucket REST API — manage repositories, pull requests, pipelines, branches, and deployments",
+  "categories": ["developer-tools", "git", "ci-cd"],
+  "specUrl": "https://raw.githubusercontent.com/APIs-guru/openapi-directory/main/APIs/bitbucket.org/2.0/openapi.yaml",
+  "baseUrl": "https://api.bitbucket.org/2.0",
+  "authType": "bearer",
+  "authEnvVar": "BITBUCKET_TOKEN",
+  "docs": "https://developer.atlassian.com/cloud/bitbucket/rest/"
+}
