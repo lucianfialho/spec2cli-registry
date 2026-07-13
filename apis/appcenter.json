@@ -1,0 +1,11 @@
+{
+  "name": "appcenter",
+  "description": "Microsoft App Center API — build, test, distribute, and monitor mobile apps across iOS and Android",
+  "categories": ["mobile", "ci-cd", "developer-tools"],
+  "specUrl": "https://raw.githubusercontent.com/APIs-guru/openapi-directory/main/APIs/appcenter.ms/v0.1/openapi.yaml",
+  "baseUrl": "https://api.appcenter.ms",
+  "authType": "apiKey",
+  "authEnvVar": "APPCENTER_TOKEN",
+  "authHeader": "X-API-Token",
+  "docs": "https://openapi.appcenter.ms/"
+}
