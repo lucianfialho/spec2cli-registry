@@ -1,0 +1,10 @@
+{
+  "name": "jira",
+  "description": "Jira Cloud REST API — manage projects, issues, sprints, workflows, and boards",
+  "categories": ["project-management", "developer-tools", "issue-tracking"],
+  "specUrl": "https://raw.githubusercontent.com/APIs-guru/openapi-directory/main/APIs/atlassian.com/jira/1001.0.0-SNAPSHOT/openapi.yaml",
+  "baseUrl": "https://your-domain.atlassian.net",
+  "authType": "bearer",
+  "authEnvVar": "JIRA_API_TOKEN",
+  "docs": "https://developer.atlassian.com/cloud/jira/platform/rest/v3/intro/"
+}
