@@ -1,0 +1,10 @@
+{
+  "name": "ably",
+  "description": "Ably Platform API — real-time messaging, pub/sub, presence, and push notifications at scale",
+  "categories": ["messaging", "real-time", "communications"],
+  "specUrl": "https://raw.githubusercontent.com/APIs-guru/openapi-directory/main/APIs/ably.io/platform/1.1.0/openapi.yaml",
+  "baseUrl": "https://rest.ably.io",
+  "authType": "bearer",
+  "authEnvVar": "ABLY_API_KEY",
+  "docs": "https://ably.com/docs/api/rest-api"
+}
