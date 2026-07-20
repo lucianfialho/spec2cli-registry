@@ -1,0 +1,11 @@
+{
+  "name": "adyen-payout",
+  "description": "Adyen Payout API — initiate and manage payouts to cardholders and bank accounts",
+  "categories": ["payments", "fintech", "payout"],
+  "specUrl": "https://raw.githubusercontent.com/Adyen/adyen-openapi/main/yaml/PayoutService-v68.yaml",
+  "baseUrl": "https://pal-test.adyen.com/pal/servlet/Payout/v68",
+  "authType": "apiKey",
+  "authHeader": "X-API-Key",
+  "authEnvVar": "ADYEN_API_KEY",
+  "docs": "https://docs.adyen.com/api-explorer/Payout/latest/overview"
+}
