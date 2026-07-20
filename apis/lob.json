@@ -1,0 +1,10 @@
+{
+  "name": "lob",
+  "description": "Lob API — address verification, USPS certified print and mail, postcards, letters, and checks",
+  "categories": ["communications", "mail", "print", "address-verification"],
+  "specUrl": "https://raw.githubusercontent.com/lob/lob-openapi/main/lob-api-public.yml",
+  "baseUrl": "https://api.lob.com/v1",
+  "authType": "bearer",
+  "authEnvVar": "LOB_API_KEY",
+  "docs": "https://docs.lob.com"
+}
