@@ -1,0 +1,11 @@
+{
+  "name": "launchdarkly",
+  "description": "LaunchDarkly REST API — feature flags, experiments, segments, environments, and team management",
+  "categories": ["developer-tools", "feature-flags", "deployment", "experimentation"],
+  "specUrl": "https://raw.githubusercontent.com/launchdarkly/api-client-go/main/api/openapi.yaml",
+  "baseUrl": "https://app.launchdarkly.com",
+  "authType": "apiKey",
+  "authHeader": "Authorization",
+  "authEnvVar": "LAUNCHDARKLY_API_KEY",
+  "docs": "https://apidocs.launchdarkly.com"
+}
