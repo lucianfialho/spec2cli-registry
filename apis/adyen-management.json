@@ -1,0 +1,11 @@
+{
+  "name": "adyen-management",
+  "description": "Adyen Management API — configure merchant accounts, stores, terminals, payment methods, and webhooks",
+  "categories": ["payments", "fintech", "platform", "management"],
+  "specUrl": "https://raw.githubusercontent.com/Adyen/adyen-openapi/main/yaml/ManagementService-v3.yaml",
+  "baseUrl": "https://management-test.adyen.com/v3",
+  "authType": "apiKey",
+  "authHeader": "X-API-Key",
+  "authEnvVar": "ADYEN_API_KEY",
+  "docs": "https://docs.adyen.com/api-explorer/Management/3/overview"
+}
