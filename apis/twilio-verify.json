@@ -1,0 +1,10 @@
+{
+  "name": "twilio-verify",
+  "description": "Twilio Verify API — phone and email verification, OTP, TOTP, push authentication, and silent network auth",
+  "categories": ["communications", "authentication", "otp", "security"],
+  "specUrl": "https://raw.githubusercontent.com/twilio/twilio-oai/main/spec/yaml/twilio_verify_v2.yaml",
+  "baseUrl": "https://verify.twilio.com",
+  "authType": "bearer",
+  "authEnvVar": "TWILIO_AUTH_TOKEN",
+  "docs": "https://www.twilio.com/docs/verify/api"
+}
