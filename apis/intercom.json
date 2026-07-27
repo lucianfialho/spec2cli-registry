@@ -1,0 +1,10 @@
+{
+  "name": "intercom",
+  "description": "Intercom API — customer messaging, inbox, contacts, and conversations",
+  "categories": ["customer-support", "messaging", "crm"],
+  "specUrl": "https://raw.githubusercontent.com/intercom/Intercom-OpenAPI/main/descriptions/2.11/api.intercom.io.yaml",
+  "baseUrl": "https://api.intercom.io",
+  "authType": "bearer",
+  "authEnvVar": "INTERCOM_ACCESS_TOKEN",
+  "docs": "https://developers.intercom.com/docs"
+}
