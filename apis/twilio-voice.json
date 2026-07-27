@@ -1,0 +1,11 @@
+{
+  "name": "twilio-voice",
+  "description": "Twilio Voice API — programmatic phone calls, TwiML, and call recordings",
+  "categories": ["voice", "telephony", "communications"],
+  "specUrl": "https://raw.githubusercontent.com/twilio/twilio-oai/main/spec/yaml/twilio_voice_v1.yaml",
+  "baseUrl": "https://voice.twilio.com",
+  "authType": "apiKey",
+  "authEnvVar": "TWILIO_AUTH_TOKEN",
+  "authHeader": "Authorization",
+  "docs": "https://www.twilio.com/docs/voice/api"
+}
