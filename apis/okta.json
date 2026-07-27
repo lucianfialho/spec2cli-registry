@@ -1,0 +1,10 @@
+{
+  "name": "okta",
+  "description": "Okta Management API — identity, users, groups, and access policies",
+  "categories": ["identity", "auth", "security"],
+  "specUrl": "https://raw.githubusercontent.com/okta/okta-management-openapi-spec/master/dist/current/management-minimal.yaml",
+  "baseUrl": "https://OKTA_DOMAIN.okta.com",
+  "authType": "bearer",
+  "authEnvVar": "OKTA_TOKEN",
+  "docs": "https://developer.okta.com/docs/reference/"
+}
