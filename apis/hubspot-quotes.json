@@ -1,0 +1,10 @@
+{
+  "name": "hubspot-quotes",
+  "description": "HubSpot CRM Quotes API — create and manage sales quotes to share pricing with prospects",
+  "categories": ["crm", "hubspot", "sales"],
+  "specUrl": "https://raw.githubusercontent.com/HubSpot/HubSpot-public-api-spec-collection/main/PublicApiSpecs/CRM/Quotes/Rollouts/424/v3/quotes.json",
+  "baseUrl": "https://api.hubapi.com",
+  "authType": "bearer",
+  "authEnvVar": "HUBSPOT_TOKEN",
+  "docs": "https://developers.hubspot.com/docs/api/crm/quotes"
+}
