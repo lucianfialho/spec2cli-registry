@@ -1,0 +1,10 @@
+{
+  "name": "twilio-studio",
+  "description": "Twilio Studio API — visual workflow builder for IVR, SMS bots, and call flows",
+  "categories": ["communications", "automation", "workflow", "ivr"],
+  "specUrl": "https://raw.githubusercontent.com/twilio/twilio-oai/main/spec/json/twilio_studio_v2.json",
+  "baseUrl": "https://studio.twilio.com",
+  "authType": "bearer",
+  "authEnvVar": "TWILIO_AUTH_TOKEN",
+  "docs": "https://www.twilio.com/docs/studio/rest-api/v2"
+}
