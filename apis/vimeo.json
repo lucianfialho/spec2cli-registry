@@ -1,0 +1,10 @@
+{
+  "name": "vimeo",
+  "description": "Vimeo API — video hosting, uploading, playback, and player customization",
+  "categories": ["video", "media", "streaming", "content"],
+  "specUrl": "https://raw.githubusercontent.com/vimeo/openapi/master/api.yaml",
+  "baseUrl": "https://api.vimeo.com",
+  "authType": "bearer",
+  "authEnvVar": "VIMEO_ACCESS_TOKEN",
+  "docs": "https://developer.vimeo.com/api/reference"
+}
