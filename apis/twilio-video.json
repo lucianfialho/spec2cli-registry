@@ -1,0 +1,10 @@
+{
+  "name": "twilio-video",
+  "description": "Twilio Video API — programmable video rooms, participants, recordings, and compositions",
+  "categories": ["communications", "video", "webrtc", "streaming"],
+  "specUrl": "https://raw.githubusercontent.com/twilio/twilio-oai/main/spec/json/twilio_video_v1.json",
+  "baseUrl": "https://video.twilio.com",
+  "authType": "bearer",
+  "authEnvVar": "TWILIO_AUTH_TOKEN",
+  "docs": "https://www.twilio.com/docs/video"
+}
