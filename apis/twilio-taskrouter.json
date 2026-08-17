@@ -1,0 +1,10 @@
+{
+  "name": "twilio-taskrouter",
+  "description": "Twilio TaskRouter API — intelligent task routing for contact centers and queues",
+  "categories": ["communications", "contact-center", "routing", "workforce"],
+  "specUrl": "https://raw.githubusercontent.com/twilio/twilio-oai/main/spec/json/twilio_taskrouter_v1.json",
+  "baseUrl": "https://taskrouter.twilio.com",
+  "authType": "bearer",
+  "authEnvVar": "TWILIO_AUTH_TOKEN",
+  "docs": "https://www.twilio.com/docs/taskrouter"
+}
