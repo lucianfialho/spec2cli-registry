@@ -1,0 +1,10 @@
+{
+  "name": "telnyx",
+  "description": "Telnyx API — programmable voice, SMS, fax, number management, and SIP trunking",
+  "categories": ["communications", "voice", "sms", "telephony", "fax"],
+  "specUrl": "https://raw.githubusercontent.com/team-telnyx/openapi/master/openapi/spec3.json",
+  "baseUrl": "https://api.telnyx.com/v2",
+  "authType": "bearer",
+  "authEnvVar": "TELNYX_API_KEY",
+  "docs": "https://developers.telnyx.com/api"
+}
