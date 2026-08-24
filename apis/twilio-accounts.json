@@ -1,0 +1,10 @@
+{
+  "name": "twilio-accounts",
+  "description": "Twilio Accounts API — manage subaccounts, credentials, and account settings",
+  "categories": ["communication", "account-management", "infrastructure"],
+  "specUrl": "https://raw.githubusercontent.com/twilio/twilio-oai/main/spec/json/twilio_accounts_v1.json",
+  "baseUrl": "https://accounts.twilio.com",
+  "authType": "bearer",
+  "authEnvVar": "TWILIO_AUTH_TOKEN",
+  "docs": "https://www.twilio.com/docs/iam/api"
+}
