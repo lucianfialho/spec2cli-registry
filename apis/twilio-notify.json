@@ -1,0 +1,10 @@
+{
+  "name": "twilio-notify",
+  "description": "Twilio Notify API — send push notifications across multiple channels from a single API",
+  "categories": ["communication", "push-notifications", "messaging"],
+  "specUrl": "https://raw.githubusercontent.com/twilio/twilio-oai/main/spec/json/twilio_notify_v1.json",
+  "baseUrl": "https://notify.twilio.com",
+  "authType": "bearer",
+  "authEnvVar": "TWILIO_AUTH_TOKEN",
+  "docs": "https://www.twilio.com/docs/notify/api"
+}
