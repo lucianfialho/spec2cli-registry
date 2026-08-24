@@ -1,0 +1,10 @@
+{
+  "name": "twilio-lookups",
+  "description": "Twilio Lookups API — phone number validation, carrier lookup, and caller ID",
+  "categories": ["communication", "telephony", "data-enrichment"],
+  "specUrl": "https://raw.githubusercontent.com/twilio/twilio-oai/main/spec/json/twilio_lookups_v2.json",
+  "baseUrl": "https://lookups.twilio.com",
+  "authType": "bearer",
+  "authEnvVar": "TWILIO_AUTH_TOKEN",
+  "docs": "https://www.twilio.com/docs/lookup/api"
+}
