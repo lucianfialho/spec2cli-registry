@@ -1,0 +1,10 @@
+{
+  "name": "twilio-insights",
+  "description": "Twilio Insights API — call quality metrics, voice call summaries, and monitoring data",
+  "categories": ["communication", "analytics", "monitoring"],
+  "specUrl": "https://raw.githubusercontent.com/twilio/twilio-oai/main/spec/json/twilio_insights_v1.json",
+  "baseUrl": "https://insights.twilio.com",
+  "authType": "bearer",
+  "authEnvVar": "TWILIO_AUTH_TOKEN",
+  "docs": "https://www.twilio.com/docs/voice/insights/api"
+}
