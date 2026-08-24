@@ -1,0 +1,10 @@
+{
+  "name": "twilio-monitor",
+  "description": "Twilio Monitor API — audit log of account events, alerts, and resource changes",
+  "categories": ["communication", "monitoring", "audit-log"],
+  "specUrl": "https://raw.githubusercontent.com/twilio/twilio-oai/main/spec/json/twilio_monitor_v1.json",
+  "baseUrl": "https://monitor.twilio.com",
+  "authType": "bearer",
+  "authEnvVar": "TWILIO_AUTH_TOKEN",
+  "docs": "https://www.twilio.com/docs/usage/monitor-rest-api"
+}
