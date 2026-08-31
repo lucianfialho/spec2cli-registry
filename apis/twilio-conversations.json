@@ -1,0 +1,10 @@
+{
+  "name": "twilio-conversations",
+  "description": "Twilio Conversations API — multi-channel messaging threads across SMS, MMS, WhatsApp, and more",
+  "categories": ["messaging", "communication"],
+  "specUrl": "https://raw.githubusercontent.com/twilio/twilio-oai/main/spec/yaml/twilio_conversations_v1.yaml",
+  "baseUrl": "https://conversations.twilio.com",
+  "authType": "bearer",
+  "authEnvVar": "TWILIO_AUTH_TOKEN",
+  "docs": "https://www.twilio.com/docs/conversations/api"
+}
