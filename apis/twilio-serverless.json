@@ -1,0 +1,10 @@
+{
+  "name": "twilio-serverless",
+  "description": "Twilio Serverless API — deploy and manage Twilio Functions and Assets",
+  "categories": ["serverless", "cloud", "developer-tools"],
+  "specUrl": "https://raw.githubusercontent.com/twilio/twilio-oai/main/spec/json/twilio_serverless_v1.json",
+  "baseUrl": "https://serverless.twilio.com",
+  "authType": "bearer",
+  "authEnvVar": "TWILIO_AUTH_TOKEN",
+  "docs": "https://www.twilio.com/docs/serverless/api"
+}
