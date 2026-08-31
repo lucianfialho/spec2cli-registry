@@ -1,0 +1,11 @@
+{
+  "name": "pandadoc",
+  "description": "PandaDoc API — document creation, e-signatures, and approval workflows",
+  "categories": ["documents", "e-signature", "sales"],
+  "specUrl": "https://raw.githubusercontent.com/PandaDoc/pandadoc-openapi-specification/main/openapi.yaml",
+  "baseUrl": "https://api.pandadoc.com",
+  "authType": "apiKey",
+  "authEnvVar": "PANDADOC_API_KEY",
+  "authHeader": "Authorization",
+  "docs": "https://developers.pandadoc.com/reference"
+}
