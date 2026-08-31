@@ -1,0 +1,10 @@
+{
+  "name": "line-messaging",
+  "description": "LINE Messaging API — send messages and manage chatbots on the LINE platform",
+  "categories": ["messaging", "communication", "social"],
+  "specUrl": "https://raw.githubusercontent.com/line/line-openapi/main/messaging-api.yml",
+  "baseUrl": "https://api.line.me",
+  "authType": "bearer",
+  "authEnvVar": "LINE_CHANNEL_ACCESS_TOKEN",
+  "docs": "https://developers.line.biz/en/docs/messaging-api/"
+}
