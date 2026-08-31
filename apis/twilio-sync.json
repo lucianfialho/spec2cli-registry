@@ -1,0 +1,10 @@
+{
+  "name": "twilio-sync",
+  "description": "Twilio Sync API — real-time shared state and data synchronization across devices",
+  "categories": ["synchronization", "real-time", "communication"],
+  "specUrl": "https://raw.githubusercontent.com/twilio/twilio-oai/main/spec/json/twilio_sync_v1.json",
+  "baseUrl": "https://sync.twilio.com",
+  "authType": "bearer",
+  "authEnvVar": "TWILIO_AUTH_TOKEN",
+  "docs": "https://www.twilio.com/docs/sync/api"
+}
