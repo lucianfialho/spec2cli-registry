@@ -1,0 +1,11 @@
+{
+  "name": "pinecone-assistant",
+  "description": "Pinecone Assistant API — create and manage RAG-powered AI assistants backed by Pinecone vector search",
+  "categories": ["ai", "rag", "assistant", "machine-learning"],
+  "specUrl": "https://raw.githubusercontent.com/pinecone-io/pinecone-api/main/2025-04/assistant_control_2025-04.oas.yaml",
+  "baseUrl": "https://api.pinecone.io/assistant",
+  "authType": "apiKey",
+  "authEnvVar": "PINECONE_API_KEY",
+  "authHeader": "Api-Key",
+  "docs": "https://docs.pinecone.io/guides/assistant/overview"
+}
