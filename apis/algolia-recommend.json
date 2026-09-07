@@ -1,0 +1,11 @@
+{
+  "name": "algolia-recommend",
+  "description": "Algolia Recommend API — retrieve AI-powered product recommendations from Algolia models",
+  "categories": ["search", "ai", "recommendations", "e-commerce"],
+  "specUrl": "https://raw.githubusercontent.com/algolia/api-clients-automation/main/specs/recommend/spec.yml",
+  "baseUrl": "https://APPID.algolia.net",
+  "authType": "apiKey",
+  "authEnvVar": "ALGOLIA_API_KEY",
+  "authHeader": "X-Algolia-API-Key",
+  "docs": "https://www.algolia.com/doc/api-reference/recommendations/overview/"
+}
