@@ -1,0 +1,11 @@
+{
+  "name": "pinecone-inference",
+  "description": "Pinecone Inference API — generate embeddings and rerank documents using Pinecone AI models",
+  "categories": ["ai", "embeddings", "machine-learning"],
+  "specUrl": "https://raw.githubusercontent.com/pinecone-io/pinecone-api/main/2025-04/inference_2025-04.oas.yaml",
+  "baseUrl": "https://api.pinecone.io",
+  "authType": "apiKey",
+  "authEnvVar": "PINECONE_API_KEY",
+  "authHeader": "Api-Key",
+  "docs": "https://docs.pinecone.io/guides/inference/understanding-inference"
+}
