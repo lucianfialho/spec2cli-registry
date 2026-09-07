@@ -1,0 +1,11 @@
+{
+  "name": "algolia-insights",
+  "description": "Algolia Insights API — collect user interaction events to power search analytics and AI personalization",
+  "categories": ["search", "analytics", "ai"],
+  "specUrl": "https://raw.githubusercontent.com/algolia/api-clients-automation/main/specs/insights/spec.yml",
+  "baseUrl": "https://insights.us.algolia.io",
+  "authType": "apiKey",
+  "authEnvVar": "ALGOLIA_API_KEY",
+  "authHeader": "X-Algolia-API-Key",
+  "docs": "https://www.algolia.com/doc/api-reference/api-methods/user-insights/"
+}
