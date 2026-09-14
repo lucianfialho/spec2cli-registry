@@ -1,0 +1,10 @@
+{
+  "name": "youtube",
+  "description": "YouTube Data API v3 — search videos, manage channels, playlists, subscriptions, and comments",
+  "categories": ["video", "streaming", "social", "media"],
+  "specUrl": "https://raw.githubusercontent.com/api-evangelist/youtube/refs/heads/main/openapi/youtube-search-api-openapi.yml",
+  "baseUrl": "https://www.googleapis.com/youtube/v3",
+  "authType": "bearer",
+  "authEnvVar": "YOUTUBE_API_KEY",
+  "docs": "https://developers.google.com/youtube/v3/docs"
+}
