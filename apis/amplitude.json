@@ -1,0 +1,10 @@
+{
+  "name": "amplitude",
+  "description": "Amplitude Data Access API — export event data, user activity, cohorts, and behavioral analytics",
+  "categories": ["analytics", "data", "product-analytics", "marketing"],
+  "specUrl": "https://raw.githubusercontent.com/api-evangelist/amplitude/refs/heads/main/openapi/amplitude-data-access-api-openapi.yml",
+  "baseUrl": "https://amplitude.com",
+  "authType": "basic",
+  "authEnvVar": "AMPLITUDE_AUTH",
+  "docs": "https://www.docs.developers.amplitude.com/analytics/apis/"
+}
