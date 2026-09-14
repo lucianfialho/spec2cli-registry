@@ -1,0 +1,10 @@
+{
+  "name": "twitch",
+  "description": "Twitch Helix API — streams, channels, clips, users, subscriptions, and EventSub webhooks",
+  "categories": ["gaming", "streaming", "video", "social"],
+  "specUrl": "https://raw.githubusercontent.com/DmitryScaletta/twitch-api-swagger/main/openapi.json",
+  "baseUrl": "https://api.twitch.tv/helix",
+  "authType": "bearer",
+  "authEnvVar": "TWITCH_ACCESS_TOKEN",
+  "docs": "https://dev.twitch.tv/docs/api/reference/"
+}
