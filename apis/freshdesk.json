@@ -1,0 +1,10 @@
+{
+  "name": "freshdesk",
+  "description": "Freshdesk API — tickets, contacts, agents, companies, and helpdesk automation",
+  "categories": ["customer-support", "helpdesk", "crm"],
+  "specUrl": "https://raw.githubusercontent.com/api-evangelist/freshdesk/refs/heads/main/openapi/freshdesk-tickets-api-openapi.yml",
+  "baseUrl": "https://{domain}.freshdesk.com/api/v2",
+  "authType": "basic",
+  "authEnvVar": "FRESHDESK_API_KEY",
+  "docs": "https://developers.freshdesk.com/api/"
+}
