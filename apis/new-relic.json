@@ -1,0 +1,11 @@
+{
+  "name": "new-relic",
+  "description": "New Relic API — alerts, events ingestion, applications, metrics, logs, and traces",
+  "categories": ["observability", "monitoring", "infrastructure", "apm"],
+  "specUrl": "https://raw.githubusercontent.com/api-evangelist/new-relic/refs/heads/main/openapi/new-relic-alerts-api-openapi.yml",
+  "baseUrl": "https://insights-collector.newrelic.com",
+  "authType": "apiKey",
+  "authHeader": "X-Api-Key",
+  "authEnvVar": "NEW_RELIC_API_KEY",
+  "docs": "https://docs.newrelic.com/docs/apis/intro-apis/introduction-new-relic-apis/"
+}
