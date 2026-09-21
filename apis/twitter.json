@@ -1,0 +1,10 @@
+{
+  "name": "twitter",
+  "description": "Twitter API v2 — manage tweets, users, spaces, and lists on Twitter/X",
+  "categories": ["social-media", "content", "messaging"],
+  "specUrl": "https://raw.githubusercontent.com/APIs-guru/openapi-directory/main/APIs/twitter.com/current/2.62/openapi.yaml",
+  "baseUrl": "https://api.twitter.com",
+  "authType": "bearer",
+  "authEnvVar": "TWITTER_BEARER_TOKEN",
+  "docs": "https://developer.twitter.com/en/docs/twitter-api"
+}
