@@ -1,0 +1,10 @@
+{
+  "name": "vonage",
+  "description": "Vonage Account API — manage communications accounts, users, and extensions",
+  "categories": ["communications", "telecom", "voip"],
+  "specUrl": "https://raw.githubusercontent.com/APIs-guru/openapi-directory/main/APIs/vonage.com/account/1.11.8/openapi.yaml",
+  "baseUrl": "https://api.vonage.com/t/vbc.prod/provisioning",
+  "authType": "bearer",
+  "authEnvVar": "VONAGE_API_KEY",
+  "docs": "https://developer.vonage.com/en/api/account"
+}
