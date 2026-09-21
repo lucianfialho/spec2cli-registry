@@ -1,0 +1,10 @@
+{
+  "name": "ebay-sell-fulfillment",
+  "description": "eBay Fulfillment API — manage orders, shipments, and returns for eBay sellers",
+  "categories": ["e-commerce", "marketplace", "shipping"],
+  "specUrl": "https://raw.githubusercontent.com/APIs-guru/openapi-directory/main/APIs/ebay.com/sell-fulfillment/v1.20.0/openapi.yaml",
+  "baseUrl": "https://api.ebay.com/sell/fulfillment/v1",
+  "authType": "bearer",
+  "authEnvVar": "EBAY_ACCESS_TOKEN",
+  "docs": "https://developer.ebay.com/api-docs/sell/fulfillment/overview.html"
+}
