@@ -1,0 +1,10 @@
+{
+  "name": "soundcloud",
+  "description": "SoundCloud API — access tracks, playlists, users, and streaming on SoundCloud",
+  "categories": ["music", "audio", "streaming"],
+  "specUrl": "https://raw.githubusercontent.com/APIs-guru/openapi-directory/main/APIs/soundcloud.com/1.0.0/openapi.yaml",
+  "baseUrl": "https://api.soundcloud.com",
+  "authType": "bearer",
+  "authEnvVar": "SOUNDCLOUD_ACCESS_TOKEN",
+  "docs": "https://developers.soundcloud.com/docs"
+}
