@@ -1,0 +1,10 @@
+{
+  "name": "mux",
+  "description": "Mux API — video infrastructure for on-demand and live streaming",
+  "categories": ["video", "media", "streaming"],
+  "specUrl": "https://raw.githubusercontent.com/APIs-guru/openapi-directory/main/APIs/mux.com/v1/openapi.yaml",
+  "baseUrl": "https://api.mux.com",
+  "authType": "bearer",
+  "authEnvVar": "MUX_ACCESS_TOKEN",
+  "docs": "https://docs.mux.com"
+}
