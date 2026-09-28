@@ -1,0 +1,11 @@
+{
+  "name": "unstructured",
+  "description": "Unstructured Pipeline API — parse and extract structured data from PDFs, Word docs, and other unstructured files",
+  "categories": ["ai", "document-processing", "data-extraction"],
+  "specUrl": "https://raw.githubusercontent.com/konfig-sdks/openapi-examples/main/unstructured/openapi.yaml",
+  "baseUrl": "https://api.unstructured.io",
+  "authType": "apiKey",
+  "authEnvVar": "UNSTRUCTURED_API_KEY",
+  "authHeader": "unstructured-api-key",
+  "docs": "https://docs.unstructured.io/api-reference/api-services/overview"
+}
