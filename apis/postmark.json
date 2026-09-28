@@ -1,0 +1,11 @@
+{
+  "name": "postmark",
+  "description": "Postmark API — transactional email sending, templates, and bounce tracking",
+  "categories": ["email", "transactional", "communication"],
+  "specUrl": "https://raw.githubusercontent.com/konfig-sdks/openapi-examples/main/postmark/openapi.yaml",
+  "baseUrl": "https://api.postmarkapp.com",
+  "authType": "apiKey",
+  "authEnvVar": "POSTMARK_SERVER_TOKEN",
+  "authHeader": "X-Postmark-Server-Token",
+  "docs": "https://postmarkapp.com/developer"
+}
