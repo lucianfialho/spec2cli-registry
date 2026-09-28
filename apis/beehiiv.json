@@ -1,0 +1,10 @@
+{
+  "name": "beehiiv",
+  "description": "Beehiiv API — manage newsletter publications, subscribers, and posts",
+  "categories": ["email", "newsletter", "marketing"],
+  "specUrl": "https://raw.githubusercontent.com/konfig-sdks/openapi-examples/main/beehiiv/openapi.yaml",
+  "baseUrl": "https://api.beehiiv.com/v2",
+  "authType": "bearer",
+  "authEnvVar": "BEEHIIV_API_KEY",
+  "docs": "https://developers.beehiiv.com/docs/v2"
+}
