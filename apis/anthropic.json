@@ -1,0 +1,11 @@
+{
+  "name": "anthropic",
+  "description": "Anthropic Claude API — messages, completions, and model inference",
+  "categories": ["ai", "llm", "nlp"],
+  "specUrl": "https://raw.githubusercontent.com/wso2/api-platform/main/llm-provider-specs/anthropic/openapi.yaml",
+  "baseUrl": "https://api.anthropic.com",
+  "authType": "apiKey",
+  "authEnvVar": "ANTHROPIC_API_KEY",
+  "authHeader": "x-api-key",
+  "docs": "https://docs.anthropic.com/en/api/getting-started"
+}
