@@ -1,0 +1,10 @@
+{
+  "name": "brex",
+  "description": "Brex Budgets API — create and manage company spend budgets and limits",
+  "categories": ["fintech", "expense-management", "payments"],
+  "specUrl": "https://raw.githubusercontent.com/konfig-sdks/openapi-examples/main/brex/budgets/openapi.yaml",
+  "baseUrl": "https://platform.brexapis.com",
+  "authType": "bearer",
+  "authEnvVar": "BREX_API_TOKEN",
+  "docs": "https://developer.brex.com/docs/budgets_api/"
+}
