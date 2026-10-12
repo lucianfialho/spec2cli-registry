@@ -1,0 +1,10 @@
+{
+  "name": "dub",
+  "description": "Dub is the modern link attribution platform for short links, conversion tracking, and affiliate programs",
+  "categories": ["links", "analytics", "marketing"],
+  "specUrl": "https://raw.githubusercontent.com/dubinc/dub-node/main/.speakeasy/out.openapi.yaml",
+  "baseUrl": "https://api.dub.co",
+  "authType": "bearer",
+  "authEnvVar": "DUB_API_KEY",
+  "docs": "https://dub.co/docs/api-reference"
+}
