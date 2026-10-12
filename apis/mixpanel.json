@@ -1,0 +1,10 @@
+{
+  "name": "mixpanel",
+  "description": "Mixpanel analytics event ingestion and user profile API",
+  "categories": ["analytics", "tracking", "data"],
+  "specUrl": "https://raw.githubusercontent.com/mixpanel/mixpanel-docs/main/openapi/ingestion.openapi.yaml",
+  "baseUrl": "https://api.mixpanel.com",
+  "authType": "bearer",
+  "authEnvVar": "MIXPANEL_TOKEN",
+  "docs": "https://developer.mixpanel.com/reference"
+}
