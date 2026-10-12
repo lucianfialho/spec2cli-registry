@@ -1,0 +1,11 @@
+{
+  "name": "deepgram",
+  "description": "Deepgram speech-to-text, text-to-speech, and AI audio intelligence REST API",
+  "categories": ["audio", "speech", "ai"],
+  "specUrl": "https://raw.githubusercontent.com/deepgram/deepgram-api-specs/main/openapi.yml",
+  "baseUrl": "https://api.deepgram.com",
+  "authType": "apiKey",
+  "authEnvVar": "DEEPGRAM_API_KEY",
+  "authHeader": "Authorization",
+  "docs": "https://developers.deepgram.com/reference"
+}
