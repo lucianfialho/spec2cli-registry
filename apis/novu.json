@@ -1,0 +1,11 @@
+{
+  "name": "novu",
+  "description": "Novu open-source notification infrastructure for in-app, email, SMS, push, and chat notifications",
+  "categories": ["notifications", "messaging", "automation"],
+  "specUrl": "https://raw.githubusercontent.com/novuhq/novu-ts/main/sources/json-development.json",
+  "baseUrl": "https://api.novu.co",
+  "authType": "apiKey",
+  "authEnvVar": "NOVU_API_KEY",
+  "authHeader": "Authorization",
+  "docs": "https://docs.novu.co/api-reference"
+}
