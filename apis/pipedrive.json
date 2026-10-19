@@ -1,0 +1,10 @@
+{
+  "name": "pipedrive",
+  "description": "Pipedrive CRM API — deals, persons, organizations, activities, pipelines, products, and leads",
+  "categories": ["crm", "sales", "deals", "leads"],
+  "specUrl": "https://raw.githubusercontent.com/konfig-sdks/openapi-examples/main/pipedrive/openapi.yaml",
+  "baseUrl": "https://api.pipedrive.com/v1",
+  "authType": "bearer",
+  "authEnvVar": "PIPEDRIVE_ACCESS_TOKEN",
+  "docs": "https://developers.pipedrive.com/docs/api/v1"
+}
