@@ -1,0 +1,10 @@
+{
+  "name": "notion",
+  "description": "Notion API — pages, databases, blocks, comments, and workspace users",
+  "categories": ["productivity", "knowledge-management", "database", "collaboration"],
+  "specUrl": "https://raw.githubusercontent.com/konfig-sdks/openapi-examples/main/notion/openapi.yaml",
+  "baseUrl": "https://api.notion.com",
+  "authType": "bearer",
+  "authEnvVar": "NOTION_API_KEY",
+  "docs": "https://developers.notion.com"
+}
