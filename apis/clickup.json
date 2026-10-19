@@ -1,0 +1,10 @@
+{
+  "name": "clickup",
+  "description": "ClickUp API — tasks, lists, spaces, folders, goals, time tracking, and workspace members",
+  "categories": ["project-management", "productivity", "tasks", "collaboration"],
+  "specUrl": "https://raw.githubusercontent.com/konfig-sdks/openapi-examples/main/clickup/openapi.yaml",
+  "baseUrl": "https://api.clickup.com/api/v2",
+  "authType": "bearer",
+  "authEnvVar": "CLICKUP_API_TOKEN",
+  "docs": "https://clickup.com/api"
+}
