@@ -1,0 +1,10 @@
+{
+  "name": "zendesk",
+  "description": "Zendesk Support API — tickets, users, organizations, groups, macros, triggers, views, and SLAs",
+  "categories": ["customer-support", "helpdesk", "ticketing", "crm"],
+  "specUrl": "https://raw.githubusercontent.com/konfig-sdks/openapi-examples/main/zendesk/openapi.yaml",
+  "baseUrl": "https://{subdomain}.zendesk.com",
+  "authType": "basic",
+  "authEnvVar": "ZENDESK_API_TOKEN",
+  "docs": "https://developer.zendesk.com/api-reference"
+}
