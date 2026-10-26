@@ -1,0 +1,10 @@
+{
+  "name": "retell-ai",
+  "description": "Retell AI API — build, test, and deploy AI voice agents for phone calls",
+  "categories": ["ai", "voice", "telephony", "agents"],
+  "specUrl": "https://raw.githubusercontent.com/konfig-sdks/openapi-examples/main/retell-ai/openapi.yaml",
+  "baseUrl": "https://api.retellai.com",
+  "authType": "bearer",
+  "authEnvVar": "RETELL_API_KEY",
+  "docs": "https://docs.retellai.com"
+}
