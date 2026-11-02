@@ -1,0 +1,11 @@
+{
+  "name": "datadog",
+  "description": "Datadog API v2 — monitors, dashboards, logs, metrics, incidents, SLOs",
+  "categories": ["monitoring", "observability", "devops", "logging"],
+  "specUrl": "https://raw.githubusercontent.com/DataDog/datadog-api-client-python/master/.generator/schemas/v2/openapi.yaml",
+  "baseUrl": "https://api.datadoghq.com",
+  "authType": "apiKey",
+  "authHeader": "DD-API-KEY",
+  "authEnvVar": "DD_API_KEY",
+  "docs": "https://docs.datadoghq.com/api/"
+}
