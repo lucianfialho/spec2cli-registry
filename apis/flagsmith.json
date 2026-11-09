@@ -1,0 +1,11 @@
+{
+  "name": "flagsmith",
+  "description": "Flagsmith API — open-source feature flag and remote configuration service",
+  "categories": ["feature-flags", "devops", "developer-tools"],
+  "specUrl": "https://raw.githubusercontent.com/Flagsmith/flagsmith/main/sdk/openapi.yaml",
+  "baseUrl": "https://edge.api.flagsmith.com",
+  "authType": "apiKey",
+  "authEnvVar": "FLAGSMITH_ENVIRONMENT_KEY",
+  "authHeader": "X-Environment-Key",
+  "docs": "https://docs.flagsmith.com/clients/rest"
+}
