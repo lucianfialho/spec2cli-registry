@@ -1,0 +1,10 @@
+{
+  "name": "merge-hris",
+  "description": "Merge HRIS API — unified human resources and payroll integration across providers",
+  "categories": ["hr", "integration", "unified-api"],
+  "specUrl": "https://raw.githubusercontent.com/merge-api/merge-hris-go/main/api/openapi.yaml",
+  "baseUrl": "https://api.merge.dev/api/hris/v1",
+  "authType": "bearer",
+  "authEnvVar": "MERGE_API_KEY",
+  "docs": "https://docs.merge.dev/hris/"
+}
