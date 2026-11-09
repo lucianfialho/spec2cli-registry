@@ -1,0 +1,11 @@
+{
+  "name": "brevo",
+  "description": "Brevo API — email, SMS, and marketing automation platform (formerly Sendinblue)",
+  "categories": ["email", "marketing", "communication"],
+  "specUrl": "https://raw.githubusercontent.com/konfig-sdks/openapi-examples/HEAD/brevo/openapi.yaml",
+  "baseUrl": "https://api.brevo.com/v3",
+  "authType": "apiKey",
+  "authEnvVar": "BREVO_API_KEY",
+  "authHeader": "api-key",
+  "docs": "https://developers.brevo.com/reference"
+}
