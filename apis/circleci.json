@@ -1,0 +1,11 @@
+{
+  "name": "circleci",
+  "description": "CircleCI API v2 — continuous integration and delivery platform",
+  "categories": ["devops", "ci-cd", "developer-tools"],
+  "specUrl": "https://raw.githubusercontent.com/konfig-sdks/openapi-examples/HEAD/circleci/openapi.yaml",
+  "baseUrl": "https://circleci.com/api/v2",
+  "authType": "apiKey",
+  "authEnvVar": "CIRCLECI_TOKEN",
+  "authHeader": "Circle-Token",
+  "docs": "https://circleci.com/docs/api/v2/"
+}
